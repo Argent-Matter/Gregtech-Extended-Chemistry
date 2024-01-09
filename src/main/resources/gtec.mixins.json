@@ -1,0 +1,15 @@
+{
+  "required": false,
+  "package": "argent_matter.gtec.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "mixins": [
+    "GTOresAccessor",
+    "GTOresMixin",
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

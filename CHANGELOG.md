@@ -1,0 +1,3 @@
+- fix-a-mixin 2: electric boogaloo
+- add some recipes for stone stuffs
+- make singleblock machines output heat
