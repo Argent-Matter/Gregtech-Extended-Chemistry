@@ -1,19 +1,14 @@
 package argent_matter.gtec;
 
-import argent_matter.gtec.common.data.GTECMaterials;
-import argent_matter.gtec.common.data.GTECRecipes;
+import argent_matter.gtec.api.recipes.PlatinumLineRecipes;
+import argent_matter.gtec.api.common.data.GTECMaterials;
+import argent_matter.gtec.api.common.data.GTECRecipes;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;
-import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconType;
-import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
-
-import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.Conditions.hasOreProperty;
 
 @GTAddon
 public class GTExtendedChemGTAddon implements IGTAddon {
@@ -65,5 +60,6 @@ public class GTExtendedChemGTAddon implements IGTAddon {
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         GTECRecipes.init(provider);
+        PlatinumLineRecipes.init(provider);
     }
 }

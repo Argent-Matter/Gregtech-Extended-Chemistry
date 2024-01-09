@@ -1,12 +1,14 @@
 package argent_matter.gtec;
 
 
-import com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType;
+import argent_matter.gtec.api.common.data.GTECBlocks;
+import argent_matter.gtec.api.common.data.GTECItems;
+import argent_matter.gtec.api.common.data.GTECMachines;
+import argent_matter.gtec.api.common.data.GTECRecipeTypes;
+import argent_matter.gtec.api.data.GTECDatagen;
 import com.gregtechceu.gtceu.config.ConfigHolder;
-import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -17,6 +19,19 @@ import org.apache.logging.log4j.Logger;
 public class GTExtendedChem {
     public static final String MOD_ID = "gtec";
     public static final Logger LOGGER = LogManager.getLogger();
+
+
+    public static void init() {
+        ConfigHolder.init();
+
+        GTECBlocks.init();
+        GTECRecipeTypes.init();
+        GTECMachines.init();
+        GTECItems.init();
+
+        GTECDatagen.init();
+
+    }
 
     public GTExtendedChem() {
         ConfigHolder.init();
