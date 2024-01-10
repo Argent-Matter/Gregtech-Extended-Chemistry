@@ -1,11 +1,8 @@
 package argent_matter.gtec;
 
 
-import argent_matter.gtec.api.common.data.GTECBlocks;
-import argent_matter.gtec.api.common.data.GTECItems;
-import argent_matter.gtec.api.common.data.GTECMachines;
-import argent_matter.gtec.api.common.data.GTECRecipeTypes;
-import argent_matter.gtec.api.data.GTECDatagen;
+import argent_matter.gtec.common.data.*;
+import argent_matter.gtec.data.GTECDatagen;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -30,6 +27,8 @@ public class GTExtendedChem {
         GTECItems.init();
 
         GTECDatagen.init();
+
+        GTECRegistries.REGISTRATE.registerRegistrate();
 
     }
 

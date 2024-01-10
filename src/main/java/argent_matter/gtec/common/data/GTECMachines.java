@@ -1,4 +1,4 @@
-package argent_matter.gtec.api.common.data;
+package argent_matter.gtec.common.data;
 
 
 @SuppressWarnings({"Convert2MethodRef", "FunctionalExpressionCanBeFolded", "unused"})

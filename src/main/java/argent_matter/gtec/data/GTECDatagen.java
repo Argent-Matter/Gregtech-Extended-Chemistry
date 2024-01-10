@@ -1,8 +1,8 @@
-package argent_matter.gtec.api.data;
+package argent_matter.gtec.data;
 
 
-import argent_matter.gtec.api.common.data.GTECRegistries;
-import argent_matter.gtec.api.data.lang.LangHandler;
+import argent_matter.gtec.common.data.GTECRegistries;
+import argent_matter.gtec.data.lang.LangHandler;
 import com.tterrag.registrate.providers.ProviderType;
 
 public class GTECDatagen {

@@ -1,8 +1,8 @@
 package argent_matter.gtec;
 
-import argent_matter.gtec.api.recipes.PlatinumLineRecipes;
-import argent_matter.gtec.api.common.data.GTECMaterials;
-import argent_matter.gtec.api.common.data.GTECRecipes;
+import argent_matter.gtec.recipes.PlatinumLineRecipes;
+import argent_matter.gtec.common.data.GTECMaterials;
+import argent_matter.gtec.common.data.GTECRecipes;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;
@@ -60,6 +60,5 @@ public class GTExtendedChemGTAddon implements IGTAddon {
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         GTECRecipes.init(provider);
-        PlatinumLineRecipes.init(provider);
     }
 }
