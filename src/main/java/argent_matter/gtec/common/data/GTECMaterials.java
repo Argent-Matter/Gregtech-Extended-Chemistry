@@ -20,25 +20,6 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 
 public class GTECMaterials {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     public static void init() {
         IronMagnetic.addFlags(GENERATE_FOIL);
         RutheniumTetroxide.setProperty(PropertyKey.FLUID, new FluidProperty());
