@@ -21,6 +21,24 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class GTECMaterials {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     public static void init() {
         IronMagnetic.addFlags(GENERATE_FOIL);
         RutheniumTetroxide.setProperty(PropertyKey.FLUID, new FluidProperty());
@@ -38,7 +56,8 @@ public class GTECMaterials {
     public static final Material PlatinumResidue = new Material.Builder("platinum_residue")
             .dust(1)
             .color(0x64601C)
-            .buildAndRegister();
+            .buildAndRegister()
+            .setFormula("??IrOsRhRu??", true);
 
     public static final Material PlatinumConcentrate = new Material.Builder("platinum_concentrate")
             .fluid()
@@ -91,7 +110,7 @@ public class GTECMaterials {
             .setFormula("CH2O2", true);
 
     public static final Material PotassiumDisulfate = new Material.Builder("potassium_disulfate")
-            .dust(1).fluid()
+            .dust(1)
             .color(0xEEA23E)
             .buildAndRegister()
             .setFormula("K2S2O7", true);

@@ -3,10 +3,12 @@ package argent_matter.gtec;
 import argent_matter.gtec.recipes.PlatinumLineRecipes;
 import argent_matter.gtec.common.data.GTECMaterials;
 import argent_matter.gtec.common.data.GTECRecipes;
+import argent_matter.gtec.recipes.removes.RemovedRecipes;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.function.Consumer;
 
@@ -40,7 +42,6 @@ public class GTExtendedChemGTAddon implements IGTAddon {
     public void registerCovers() {
         IGTAddon.super.registerCovers();
     }
-
 
     @Override
     public boolean requiresHighTier() {

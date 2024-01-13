@@ -10,6 +10,7 @@ import static com.gregtechceu.gtceu.utils.FormattingUtil.toEnglishName;
 
 public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
     private static final Set<Material> MATERIALS = Set.of(
+            GTECMaterials.PlatinumMetallicPowder,
             GTECMaterials.PlatinumResidue,
             GTECMaterials.PlatinumConcentrate,
             GTECMaterials.RepercipitatedPlatinum,

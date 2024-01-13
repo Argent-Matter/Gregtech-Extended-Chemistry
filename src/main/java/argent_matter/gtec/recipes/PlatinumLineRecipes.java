@@ -78,7 +78,7 @@ public class PlatinumLineRecipes {
 
         LARGE_CHEMICAL_RECIPES.recipeBuilder("tiny_platinum_dusts")
                 .inputFluids(GTECMaterials.PlatinumConcentrate.getFluid(2000))
-                .inputItems(dust, AmmoniumChloride, 1)
+                .inputItems(dustSmall, AmmoniumChloride, 2)
                 .circuitMeta(1)
                 .outputItems(dustTiny, GTECMaterials.PlatinumSalt,16)
                 .outputItems(dustTiny, GTECMaterials.RepercipitatedPlatinum,4)
@@ -89,7 +89,7 @@ public class PlatinumLineRecipes {
 
         LARGE_CHEMICAL_RECIPES.recipeBuilder("large_platinum_dusts")
                 .inputFluids(GTECMaterials.PlatinumConcentrate.getFluid(18000))
-                .inputItems(dust, AmmoniumChloride, 5)
+                .inputItems(dust, AmmoniumChloride, 2)
                 .circuitMeta(1)
                 .outputItems(dust, GTECMaterials.PlatinumSalt,16)
                 .outputItems(dust, GTECMaterials.RepercipitatedPlatinum,4)
@@ -107,7 +107,7 @@ public class PlatinumLineRecipes {
 
         // Platinum Dust <------ First Platline Output
 
-        CHEMICAL_RECIPES.recipeBuilder("completed_platinum_dust")
+        CHEMICAL_RECIPES.recipeBuilder("raw_platinum_separation")
                 .inputItems(dust, GTECMaterials.RepercipitatedPlatinum,4)
                 .inputItems(dust, Calcium,1)
                 .outputItems(dust, Platinum,2)
@@ -140,7 +140,7 @@ public class PlatinumLineRecipes {
 
         // Palladium Dust <----------- Second Platline Output
 
-        CHEMICAL_RECIPES.recipeBuilder("palladium_dust")
+        CHEMICAL_RECIPES.recipeBuilder("raw_palladium_separation")
                 .inputItems(dust, GTECMaterials.RepercipitatedPalladium,4)
                 .inputFluids(GTECMaterials.FormicAcid.getFluid(4000))
                 .outputItems(dust, Palladium,2)
@@ -152,9 +152,10 @@ public class PlatinumLineRecipes {
 
         BLAST_RECIPES.recipeBuilder("leach_residue_one")
                 .inputItems(dust, GTECMaterials.PlatinumResidue,1)
-                .circuitMeta(11)
-                .inputFluids(GTECMaterials.PotassiumDisulfate.getFluid(360))
+                .circuitMeta(2)
+                .inputItems(dustSmall, GTECMaterials.PotassiumDisulfate, 2)
                 .outputFluids(RhodiumSulfate.getFluid(360))
+                .blastFurnaceTemp(775)
                 .duration(200).EUt(VA[MV]).save(provider);
 
         CHEMICAL_RECIPES.recipeBuilder("rhodium_sulfate_to_solution")
@@ -187,6 +188,7 @@ public class PlatinumLineRecipes {
                 .inputItems(dust, Salt, 1)
                 .inputFluids(Chlorine.getFluid(1000))
                 .outputItems(dust, GTECMaterials.RhodiumSalt, 3)
+                .blastFurnaceTemp(600)
                 .duration(200).EUt(VA[MV]).save(provider);
 
         MIXER_RECIPES.recipeBuilder("rhodium_salt_solution")
@@ -233,6 +235,7 @@ public class PlatinumLineRecipes {
                 .outputItems(dust, GTECMaterials.SodiumRuthenate, 3)
                 .outputItems(dust, GTECMaterials.RarestMetalResidue,6)
                 .outputFluids(Steam.getFluid(1000))
+                .blastFurnaceTemp(775)
                 .duration(200).EUt(VA[MV]).save(provider);
 
         CHEMICAL_RECIPES.recipeBuilder("ruthenium_tetroxide")
@@ -249,19 +252,13 @@ public class PlatinumLineRecipes {
         DISTILLATION_RECIPES.recipeBuilder("hot_ruthenium_tetroxide_distill")
                 .inputFluids(GTECMaterials.HotRutheniumTetroxideSolution.getFluid(9000))
                 .outputItems(dust, Salt,5)
+                .outputItems(dustSmall, RutheniumTetroxide, 30)
                 .outputFluids(Water.getFluid(1800))
-                .outputFluids(RutheniumTetroxide.getFluid(7200))
                 .duration(1500).EUt(VA[HV]).save(provider);
-
-        FLUID_SOLIDFICATION_RECIPES.recipeBuilder("ruthenium_tetroxide_completion")
-                .circuitMeta(1)
-                .inputFluids(RutheniumTetroxide.getFluid(1000))
-                .outputItems(dust, RutheniumTetroxide, 1)
-                .duration(33).EUt(VA[LV]).save(provider);
 
         // Ruthenium Completion <----------  Fourth Platinum Line output (im still sane)
 
-        CHEMICAL_RECIPES.recipeBuilder("ruthenium_dust_completion")
+        CHEMICAL_RECIPES.recipeBuilder("ruthenium_tetroxide_separation")
                 .inputItems(dust, RutheniumTetroxide,1)
                 .inputFluids(HydrochloricAcid.getFluid(6000))
                 .outputItems(dust, Ruthenium,1)
@@ -273,16 +270,18 @@ public class PlatinumLineRecipes {
 
         BLAST_RECIPES.recipeBuilder("rarest_metal_residue_ebf")
                 .inputItems(dust, GTECMaterials.RarestMetalResidue,2)
-                .circuitMeta(11)
+                .circuitMeta(2)
                 .inputFluids(HydrochloricAcid.getFluid(500))
                 .outputItems(dust, IridiumMetalResidue, 1)
                 .outputFluids(AcidicOsmiumSolution.getFluid(1000))
+                .blastFurnaceTemp(775)
                 .duration(100).EUt(VA[MV]).save(provider);
 
         BLAST_RECIPES.recipeBuilder("acidic_osmium_solution_distill")
                 .inputFluids(AcidicOsmiumSolution.getFluid(1000))
                 .outputFluids(GTECMaterials.OsmiumSolution.getFluid(100))
                 .outputFluids(Water.getFluid(900))
+                .blastFurnaceTemp(2400)
                 .duration(150).EUt(VA[IV]).save(provider);
 
         // Osmium Completion <---- Fifth platline output
@@ -291,7 +290,7 @@ public class PlatinumLineRecipes {
                 .inputFluids(HydrochloricAcid.getFluid(6000))
                 .inputFluids(AcidicOsmiumSolution.getFluid(1000))
                 .outputFluids(Water.getFluid(900))
-                .outputItems(dust, Iridium,1)
+                .outputItems(dust, Osmium,1)
                 .outputFluids(Water.getFluid(2000))
                 .outputFluids(Chlorine.getFluid(7000))
                 .duration(300).EUt(VA[LV]).save(provider);
@@ -303,6 +302,7 @@ public class PlatinumLineRecipes {
                 .circuitMeta(1)
                 .outputItems(dust, GTECMaterials.SludgeDustResidue,1)
                 .outputItems(dust, GTECMaterials.IridiumDioxide,1)
+                .blastFurnaceTemp(775)
                 .duration(200).EUt(VA[MV]).save(provider);
 
         CHEMICAL_RECIPES.recipeBuilder("iridium_dioxide_dissolving")
@@ -312,22 +312,183 @@ public class PlatinumLineRecipes {
                 .duration(300).EUt(VA[LV]).save(provider);
 
         CHEMICAL_RECIPES.recipeBuilder("iridium_chloride")
-                .inputItems(dust, AmmoniumChloride, 88)
+                .inputItems(dust, AmmoniumChloride, 11)
                 .inputFluids(GTECMaterials.AcidicIridiumSolution.getFluid(1000))
                 .outputItems(dust,IridiumChloride,1)
                 .outputFluids(Ammonia.getFluid(3000))
                 .duration(300).EUt(VA[LV]).save(provider);
 
+        BLAST_RECIPES.recipeBuilder("refined_platlinum_salt_to_metallic")
+                .inputItems(dust, GTECMaterials.RefinedPlatlinumSalt,1)
+                .circuitMeta(1)
+                .outputItems(dust, GTECMaterials.PlatinumMetallicPowder,1)
+                .outputFluids(Chlorine.getFluid(87))
+                .blastFurnaceTemp(900i l)
+                .duration(200).EUt(VA[MV]).save(provider);
+
         // Iridium Completion <-------- Holy shit Platline Finally completed
 
-
-        CHEMICAL_RECIPES.recipeBuilder("iridium_dust_completion")
+        CHEMICAL_RECIPES.recipeBuilder("iridium_chloride_separation")
                 .inputItems(dust, IridiumChloride,1)
                 .inputItems(dust, Calcium,1)
                 .outputItems(dust, GTECMaterials.MetallicSludgeResidue,1)
                 .outputItems(dust, Iridium,1)
                 .outputItems(dust, CalciumChloride, 4)
                 .duration(300).EUt(VA[EV]).save(provider);
+
+        // Remaining Sifting Recipes
+        SIFTER_RECIPES.recipeBuilder("refined_platinum_salt")
+                        .inputItems(dust, GTECMaterials.PlatinumSalt,1)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1000,0)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1000,0)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1000,0)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1000,0)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1000,0)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1500,0)
+                .duration(600).EUt(VA[LV]).save(provider);
+
+        SIFTER_RECIPES.recipeBuilder("salt_to_metallic_powder_palladium")
+                .inputItems(dust, GTECMaterials.PalladiumSalt,1)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1000,0)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1000,0)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1000,0)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1000,0)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1000,0)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1500,0)
+                .duration(600).EUt(VA[LV]).save(provider);
+
+
+
+
+        // The Extra Stuff Overwriting Progression ETC
+
+
+        ELECTROLYZER_RECIPES.recipeBuilder("raw_platinum_separation")
+                .inputItems(dust, PlatinumRaw,3)
+                .outputItems(dust, GTECMaterials.PlatinumMetallicPowder,1)
+                .outputFluids(Chlorine.getFluid(800))
+                .duration(2400).EUt(VA[MV]).save(provider);
+
+        ELECTROLYZER_RECIPES.recipeBuilder("decomposition_electrolyzing_cooperite")
+                .inputItems(dust, Cooperite,6)
+                .outputItems(dust, GTECMaterials.PlatinumMetallicPowder,3)
+                .outputItems(dust, Nickel,1)
+                .outputItems(dust, Sulfur,1)
+                .outputItems(dust, GTECMaterials.PalladiumSalt,1)
+                .duration(1200).EUt(VA[MV]).save(provider);
+
+        LARGE_CHEMICAL_RECIPES.recipeBuilder("pgs_from_tetrahedrite")
+                .inputItems(crushedPurified, Tetrahedrite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(150))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        LARGE_CHEMICAL_RECIPES.recipeBuilder("pgs_from_bornite")
+                .inputItems(crushedPurified, Bornite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(150))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        LARGE_CHEMICAL_RECIPES.recipeBuilder("pgs_from_chalcopyrite")
+                .inputItems(crushedPurified, Chalcopyrite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(150))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        LARGE_CHEMICAL_RECIPES.recipeBuilder("pgs_from_pentlandite")
+                .inputItems(crushedPurified, Pentlandite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(150))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        LARGE_CHEMICAL_RECIPES.recipeBuilder("pgs_from_cooperite")
+                .inputItems(crushedPurified, Cooperite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(300))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        LARGE_CHEMICAL_RECIPES.recipeBuilder("pgs_from_chalcocite")
+                .inputItems(crushedPurified, Chalcocite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(150))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+
+        CHEMICAL_RECIPES.recipeBuilder("pgs_from_tetrahedrite")
+                .inputItems(crushedPurified, Tetrahedrite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(150))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        CHEMICAL_RECIPES.recipeBuilder("pgs_from_bornite")
+                .inputItems(crushedPurified, Bornite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(150))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        CHEMICAL_RECIPES.recipeBuilder("pgs_from_chalcopyrite")
+                .inputItems(crushedPurified, Chalcopyrite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(150))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        CHEMICAL_RECIPES.recipeBuilder("pgs_from_pentlandite")
+                .inputItems(crushedPurified, Pentlandite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(150))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        CHEMICAL_RECIPES.recipeBuilder("pgs_from_cooperite")
+                .inputItems(crushedPurified, Cooperite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(300))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        CHEMICAL_RECIPES.recipeBuilder("pgs_from_chalcocite")
+                .inputItems(crushedPurified, Chalcocite,1)
+                .circuitMeta(1)
+                .inputFluids(AquaRegia.getFluid(150))
+                .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(150))
+                .duration(250).EUt(VA[LV]).save(provider);
+
+
+
+        CHEMICAL_RECIPES.recipeBuilder("inert_metal_mixture_separation")
+                .inputItems(dust, InertMetalMixture,1)
+                .outputItems(dust, GTECMaterials.SodiumRuthenate,1)
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        LARGE_CHEMICAL_RECIPES.recipeBuilder("inert_metal_mixture_separation")
+                .inputItems(dust, InertMetalMixture,1)
+                .outputItems(dust, GTECMaterials.SodiumRuthenate,1)
+                .duration(250).EUt(VA[LV]).save(provider);
+
+        CHEMICAL_RECIPES.recipeBuilder("rarest_metal_mixture_separation")
+                .inputItems(dust, RarestMetalMixture,1)
+                .outputItems(dust, GTECMaterials.IridiumDioxide,1)
+                .duration(250).EUt(VA[UV]).save(provider);
+
+        LARGE_CHEMICAL_RECIPES.recipeBuilder("rarest_metal_mixture_separation")
+                .inputItems(dust, RarestMetalMixture,1)
+                .outputItems(dust, GTECMaterials.IridiumDioxide,1)
+                .duration(250).EUt(VA[UV]).save(provider);
+
+        CENTRIFUGE_RECIPES.recipeBuilder("iridium_metal_residue_separation")
+                .inputItems(dust, IridiumMetalResidue,1)
+                .outputItems(dust, PlatinumSludgeResidue,1)
+                .duration(250).EUt(VA[LV]).save(provider);
+
 
     }
 }
