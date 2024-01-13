@@ -216,4 +216,7 @@ public class GTECMaterials {
             .buildAndRegister()
             .setFormula("???", true);
 
+
+    // Monazite Chain Materials
+
 }

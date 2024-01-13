@@ -1,6 +1,7 @@
 package argent_matter.gtec.common.data;
 
 
+import argent_matter.gtec.recipes.MonaziteChainRecipes;
 import argent_matter.gtec.recipes.PlatinumLineRecipes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
@@ -11,5 +12,6 @@ public class GTECRecipes {
 
     public static void init(Consumer<FinishedRecipe> provider) {
         PlatinumLineRecipes.init(provider);
+        MonaziteChainRecipes.init(provider);
     }
 }
