@@ -323,7 +323,7 @@ public class PlatinumLineRecipes {
                 .circuitMeta(1)
                 .outputItems(dust, GTECMaterials.PlatinumMetallicPowder,1)
                 .outputFluids(Chlorine.getFluid(87))
-                .blastFurnaceTemp(900i l)
+                .blastFurnaceTemp(900)
                 .duration(200).EUt(VA[MV]).save(provider);
 
         // Iridium Completion <-------- Holy shit Platline Finally completed
