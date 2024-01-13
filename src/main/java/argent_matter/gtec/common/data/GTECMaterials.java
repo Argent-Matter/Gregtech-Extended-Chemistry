@@ -23,17 +23,16 @@ public class GTECMaterials {
 
     public static void init() {
         IronMagnetic.addFlags(GENERATE_FOIL);
-        AmmoniumChloride.setProperty(PropertyKey.FLUID, new FluidProperty());
         RutheniumTetroxide.setProperty(PropertyKey.FLUID, new FluidProperty());
-        CalciumChloride.setProperty(PropertyKey.FLUID, new FluidProperty());
+        RutheniumTetroxide.getProperty(PropertyKey.FLUID).getStorage().enqueueRegistration(FluidStorageKeys.LIQUID, new FluidBuilder());
     }
 
 
     // PlatinumLine
-public static final Material PlatinumMetallicPowder = new Material.Builder("platinum_metallic_powder")
-        .dust(1)
-        .color(0xF0EC9A).iconSet(MaterialIconSet.BRIGHT)
-        .buildAndRegister()
+    public static final Material PlatinumMetallicPowder = new Material.Builder("platinum_metallic_powder")
+            .dust(1)
+            .color(0xF0EC9A).iconSet(MaterialIconSet.BRIGHT)
+            .buildAndRegister()
             .setFormula("??PtPdIrOsRhRu??", true);
 
     public static final Material PlatinumResidue = new Material.Builder("platinum_residue")
@@ -76,14 +75,14 @@ public static final Material PlatinumMetallicPowder = new Material.Builder("plat
 
     public static final Material PalladiumSalt = new Material.Builder("palladium_salt")
             .dust(1)
-        .color(0x65655E).iconSet(METALLIC)
+            .color(0x65655E).iconSet(METALLIC)
             .buildAndRegister();
 
     public static final Material RepercipitatedPalladium = new Material.Builder("reprecipitated_palladium")
             .dust(1)
             .color(0x65655E).iconSet(METALLIC)
             .buildAndRegister()
-    .setFormula("Pd2NH4", true);
+            .setFormula("Pd2NH4", true);
 
     public static final Material FormicAcid = new Material.Builder("formic_acid")
             .fluid()
@@ -155,7 +154,7 @@ public static final Material PlatinumMetallicPowder = new Material.Builder("plat
             .dust(1)
             .color(0xDB973B).iconSet(SHINY)
             .buildAndRegister()
-                .setFormula("Rh2NH4", true);
+            .setFormula("Rh2NH4", true);
 
     public static final Material RarestMetalResidue = new Material.Builder("rarest_metal_residue")
             .dust(1)
@@ -216,14 +215,5 @@ public static final Material PlatinumMetallicPowder = new Material.Builder("plat
             .color(0x694B20)
             .buildAndRegister()
             .setFormula("???", true);
-
-
-
-
-
-
-
-
-
 
 }

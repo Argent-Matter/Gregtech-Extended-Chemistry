@@ -30,34 +30,13 @@ public class GTECDatagenerator {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
-        var registryAccess = RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY);
-        var registries = createProvider(registryAccess);
+        var registryAccess = event.getLookupProvider();
         if (event.includeServer()) {
             var set = Set.of(GTExtendedChem.MOD_ID);
-            generator.addProvider(true, bindRegistries(BiomeTagsProviderImpl::new, registries));
             generator.addProvider(true, new SoundEntryBuilder.SoundEntryProvider(generator.getPackOutput(), GTExtendedChem.MOD_ID));
-            generator.addProvider(true, bindRegistries((output, provider) -> new GTRegistriesDatapackGenerator(
-                    output, registries, new RegistrySetBuilder(),
-                    set, "Worldgen Data"), registries));
+            generator.addProvider(true, new GTRegistriesDatapackGenerator(
+                    generator.getPackOutput(), registryAccess, new RegistrySetBuilder(),
+                    set, "Worldgen Data"));
         }
-    }
-
-    private static <T extends DataProvider> DataProvider.Factory<T> bindRegistries(
-            BiFunction<PackOutput, CompletableFuture<HolderLookup.Provider>, T> factory,
-            CompletableFuture<HolderLookup.Provider> factories) {
-        return packOutput -> factory.apply(packOutput, factories);
-    }
-
-    private static CompletableFuture<HolderLookup.Provider> createProvider(RegistryAccess registryAccess) {
-
-        var vanillaLookup = CompletableFuture.supplyAsync(VanillaRegistries::createLookup, Util.backgroundExecutor());
-
-        return vanillaLookup.thenApply(provider -> {
-            var builder = new RegistrySetBuilder()
-                    .add(Registries.NOISE, NoiseData::bootstrap)
-                    .add(Registries.BIOME, BiomeData::bootstrap);
-
-            return builder.buildPatch(registryAccess, provider);
-        });
     }
 }

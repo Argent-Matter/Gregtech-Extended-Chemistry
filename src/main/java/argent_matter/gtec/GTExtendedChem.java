@@ -17,9 +17,9 @@ public class GTExtendedChem {
     public static final String MOD_ID = "gtec";
     public static final Logger LOGGER = LogManager.getLogger();
 
-
-    public static void init() {
-        ConfigHolder.init();
+    public GTExtendedChem() {
+        IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
+        MinecraftForge.EVENT_BUS.register(this);
 
         GTECBlocks.init();
         GTECRecipeTypes.init();
@@ -29,17 +29,6 @@ public class GTExtendedChem {
         GTECDatagen.init();
 
         GTECRegistries.REGISTRATE.registerRegistrate();
-
-    }
-
-    public GTExtendedChem() {
-        ConfigHolder.init();
-
-        IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
-        MinecraftForge.EVENT_BUS.register(this);
-
-        // Initialize GT stuffs
-
     }
 
     public static ResourceLocation id(String path) {

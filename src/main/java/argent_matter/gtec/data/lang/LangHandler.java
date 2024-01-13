@@ -48,7 +48,7 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
         // materials
         for (Material material : MATERIALS) {
             provider.add(material.getUnlocalizedName(), toEnglishName(material.getName()));
-
         }
+
     }
 }

@@ -11,6 +11,5 @@ public class GTECRecipes {
 
     public static void init(Consumer<FinishedRecipe> provider) {
         PlatinumLineRecipes.init(provider);
-
-        }
+    }
 }
