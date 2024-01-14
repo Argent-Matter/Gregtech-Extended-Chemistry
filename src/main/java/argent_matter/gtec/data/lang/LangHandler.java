@@ -41,7 +41,47 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
             GTECMaterials.SludgeDustResidue,
             GTECMaterials.IridiumDioxide,
             GTECMaterials.AcidicIridiumSolution,
-            GTECMaterials.MetallicSludgeResidue
+            GTECMaterials.MetallicSludgeResidue,
+            GTECMaterials.MuddyMonaziteRareEarthSolution,
+            GTECMaterials.DilutedMonaziteRareEarthMud,
+            GTECMaterials.HafniaZirconiaBlend,
+            GTECMaterials.ThoriumDioxide,
+            GTECMaterials.MonaziteSulfate,
+            GTECMaterials.RedZircon,
+            GTECMaterials.AcidicMonazitePowder,
+            GTECMaterials.MonaziteRareEarthFiltrate,
+            GTECMaterials.ThoriumPhosphateCake,
+            GTECMaterials.NeutralizedMonaziteRareEarthFiltrate,
+            GTECMaterials.MonaziteRareEarthHydroxideConcentrate,
+            GTECMaterials.UraniumFiltrate,
+            GTECMaterials.DriedMonaziteRareEarthConcentrate,
+            GTECMaterials.CeriumDioxide,
+            GTECMaterials.CeriumChloride,
+            GTECMaterials.CooledMonaziteRareEarthConcentrate,
+            GTECMaterials.MonaziteRarerEarthSediment,
+            GTECMaterials.HeterogenousHalogenicMonaziteRareEarthMixture,
+            GTECMaterials.SamaricResidue,
+            GTECMaterials.SaturatedMonazatiteRareEarth,
+            GTECMaterials.EuropiumIIIOxide,
+            GTECMaterials.CeriumOxalate,
+            GTECMaterials.CeriumIIIOxide,
+            GTECMaterials.NeutralizedUraniumFiltrate,
+            GTECMaterials.Hafnia,
+            GTECMaterials.Zirconia,
+            GTECMaterials.HafniumTetrachloride,
+            GTECMaterials.LowPurityHafnium,
+            GTECMaterials.HafniumIodide,
+            GTECMaterials.DilutedMonaziteSulfate,
+            GTECMaterials.AmmoniumNitrateSolution,
+            GTECMaterials.NitrogenatedMonaziteRareEarthConcentrate,
+            GTECMaterials.NitricLeachedMonaziteMixture,
+            GTECMaterials.NitricMonaziteLeachedConcentrate,
+            GTECMaterials.Oxalate
+
+
+
+
+
 
     );
 
