@@ -9,6 +9,7 @@ import com.gregtechceu.gtceu.api.fluids.attribute.FluidAttributes;
 import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 import net.minecraft.world.item.crafting.BlastingRecipe;
+import org.apache.logging.log4j.core.async.BasicAsyncLoggerContextSelector;
 
 import javax.swing.plaf.ProgressBarUI;
 
@@ -24,6 +25,9 @@ public class GTECMaterials {
     public static void init() {
         IronMagnetic.addFlags(GENERATE_FOIL);
         Hafnium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Hafnium.setProperty(PropertyKey.BLAST, new BlastProperty(3400));
+        Zirconium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Zirconium.setProperty(PropertyKey.BLAST, new BlastProperty(4500));
         Gadolinium.setProperty(PropertyKey.DUST, new DustProperty());
         RutheniumTetroxide.setProperty(PropertyKey.FLUID, new FluidProperty());
         RutheniumTetroxide.getProperty(PropertyKey.FLUID).getStorage().enqueueRegistration(FluidStorageKeys.LIQUID, new FluidBuilder());
@@ -397,7 +401,7 @@ public class GTECMaterials {
             .dust(1)
             .color(0xD8DA2F).iconSet(ROUGH)
             .buildAndRegister()
-            .setFormula("Ce2(C2O4)3", true);
+            .setFormula("Ce2O3", true);
 
     public static final Material NeutralizedUraniumFiltrate = new  Material.Builder("neutralized_uranium_filtrate")
             .dust(1)
@@ -418,7 +422,13 @@ public class GTECMaterials {
             .setFormula("ZrO2", true);
 
     public static final Material HafniumTetrachloride = new  Material.Builder("hafnium_tetrachloride")
-            .dust(1).fluid()
+            .dust(1)
+            .color(0xE2DEDD).iconSet(METALLIC)
+            .buildAndRegister()
+            .setFormula("HfCl4", true);
+
+    public static final Material HafniumTetrachlorideSolution = new  Material.Builder("hafnium_tetrachloride_solution")
+            .fluid()
             .color(0xE2DEDD).iconSet(METALLIC)
             .buildAndRegister()
             .setFormula("HfCl4", true);
@@ -437,15 +447,55 @@ public class GTECMaterials {
             .buildAndRegister()
             .setFormula("HfI4", true);
 
+    public static final Material ZirconiumTetrachloride = new  Material.Builder("zirconium_tetrachloride")
+            .dust(1)
+            .color(0xA6786E).iconSet(METALLIC)
+            .buildAndRegister()
+            .setFormula("ZrCl4", true);
 
+    public static final Material ZirconiumTetrachlorideSolution = new  Material.Builder("zirconium_tetrachloride_solution")
+            .fluid()
+            .color(0xA6786E).iconSet(METALLIC)
+            .buildAndRegister()
+            .setFormula("ZrCl4", true);
 
+    public static final Material ThoriumPhosphateConcentrate = new  Material.Builder("thorium_phosphate_concentrate")
+            .dust()
+            .color(0xE27717).iconSet(ROUGH)
+            .buildAndRegister()
+            .setFormula("??ThP??", true);
 
+    public static final Material Alumina = new  Material.Builder("alumina")
+            .dust()
+            .color(0x64B5BF).iconSet(SHINY)
+            .buildAndRegister()
+            .setFormula("Al2O3", true);
 
+    public static final Material EuropiumOxide = new  Material.Builder("europium_oxide")
+            .dust()
+            .color(0xEBE2EC).iconSet(ROUGH)
+            .buildAndRegister()
+            .setFormula("EuO", true);
 
+    public static final Material VanadiumPentoxide = new  Material.Builder("vanadium_pentoxide")
+            .dust()
+            .color(0xD0BD3F).iconSet(SHINY)
+            .components(Vanadium, 2, Oxygen, 5)
+            .flags(DECOMPOSITION_BY_ELECTROLYZING)
+            .buildAndRegister()
+            .setFormula("V2O5" , true);
 
+    public static final Material SodiumFormate = new  Material.Builder("sodium_formate")
+            .fluid()
+            .color(0xE33BA7)
+            .buildAndRegister()
+            .setFormula("HCOONa" , true);
 
-
-
-
-
+    public static final Material SodiumSulfate = new  Material.Builder("sodium_sulfate")
+            .dust()
+            .color(0xE33BA7)
+            .components(Sulfur, 1, Oxygen,4, Sodium, 2)
+            .flags(DECOMPOSITION_BY_ELECTROLYZING)
+            .buildAndRegister()
+            .setFormula("Na2SO4" , true);
 }

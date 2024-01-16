@@ -489,6 +489,19 @@ public class PlatinumLineRecipes {
                 .outputItems(dust, PlatinumSludgeResidue,1)
                 .duration(250).EUt(VA[LV]).save(provider);
 
+        // Formic Acid
+        CHEMICAL_RECIPES.recipeBuilder("sodium_formate")
+                .inputItems(dust, SodiumHydroxide,3)
+                .inputFluids(CarbonMonoxide.getFluid(1000))
+                .outputFluids(GTECMaterials.SodiumFormate.getFluid(1000))
+                .duration(15).EUt(VA[LV]).save(provider);
 
+        CHEMICAL_RECIPES.recipeBuilder("formic_acid")
+                .inputFluids(GTECMaterials.SodiumFormate.getFluid(2000))
+                .inputFluids(SulfuricAcid.getFluid(1000))
+                .circuitMeta(1)
+                .outputFluids(GTECMaterials.FormicAcid.getFluid(2000))
+                .outputItems(dust, GTECMaterials.SodiumSulfate,7)
+                .duration(15).EUt(VA[LV]).save(provider);
     }
 }

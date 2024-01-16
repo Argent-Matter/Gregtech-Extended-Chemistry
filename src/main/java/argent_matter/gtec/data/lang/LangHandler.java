@@ -62,9 +62,7 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
             GTECMaterials.HeterogenousHalogenicMonaziteRareEarthMixture,
             GTECMaterials.SamaricResidue,
             GTECMaterials.SaturatedMonazatiteRareEarth,
-            GTECMaterials.EuropiumIIIOxide,
             GTECMaterials.CeriumOxalate,
-            GTECMaterials.CeriumIIIOxide,
             GTECMaterials.NeutralizedUraniumFiltrate,
             GTECMaterials.Hafnia,
             GTECMaterials.Zirconia,
@@ -76,13 +74,16 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
             GTECMaterials.NitrogenatedMonaziteRareEarthConcentrate,
             GTECMaterials.NitricLeachedMonaziteMixture,
             GTECMaterials.NitricMonaziteLeachedConcentrate,
-            GTECMaterials.Oxalate
-
-
-
-
-
-
+            GTECMaterials.ZirconiumTetrachloride,
+            GTECMaterials.ZirconiumTetrachlorideSolution,
+            GTECMaterials.ThoriumPhosphateConcentrate,
+            GTECMaterials.Alumina,
+            GTECMaterials.EuropiumOxide,
+            GTECMaterials.VanadiumPentoxide,
+            GTECMaterials.SodiumFormate,
+            GTECMaterials.SodiumSulfate,
+            GTECMaterials.Oxalate,
+            GTECMaterials.HafniumTetrachlorideSolution
     );
 
     public static void init(RegistrateLangProvider provider) {
@@ -90,6 +91,9 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
         for (Material material : MATERIALS) {
             provider.add(material.getUnlocalizedName(), toEnglishName(material.getName()));
         }
+        provider.add(GTECMaterials.EuropiumIIIOxide.getUnlocalizedName(), "Europium (III) Oxide");
+        provider.add(GTECMaterials.CeriumIIIOxide.getUnlocalizedName(), "Cerium (III) Oxide");
+
 
     }
 }

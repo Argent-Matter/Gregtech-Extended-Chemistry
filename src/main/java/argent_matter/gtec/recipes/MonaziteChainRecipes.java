@@ -54,7 +54,7 @@ public class MonaziteChainRecipes {
                 .outputFluids(GTECMaterials.DilutedMonaziteRareEarthMud.getFluid(99000))
                 .duration(8100).EUt(VA[HV]).save(provider);
 
-        SIFTER_RECIPES.recipeBuilder("diluted_rare_mud_sifting")
+        ELECTROLYZER_RECIPES.recipeBuilder("decomposition_electrolyzing_monazite")
                 .inputFluids(GTECMaterials.DilutedMonaziteRareEarthMud.getFluid(1000))
                 .chancedOutput(dust, GTECMaterials.MonaziteSulfate, 9000,10)
                 .chancedOutput(dust, SiliconDioxide, 7500,10)
@@ -121,7 +121,7 @@ public class MonaziteChainRecipes {
                 .outputFluids(GTECMaterials.NitricLeachedMonaziteMixture.getFluid(1000))
                 .duration(200).EUt(VA[MV]).save(provider);
 
-        SIFTER_RECIPES.recipeBuilder("nitric_leached_monazite_sifting")
+        CENTRIFUGE_RECIPES.recipeBuilder("rare_earth_separation")
                 .inputFluids(GTECMaterials.NitricLeachedMonaziteMixture.getFluid(1000))
                 .chancedOutput(dust, GTECMaterials.CeriumDioxide,1111,0)
                 .outputFluids(GTECMaterials.NitricMonaziteLeachedConcentrate.getFluid(1000))
@@ -160,44 +160,11 @@ public class MonaziteChainRecipes {
 
         // Samarium/Gadolinium Dust Finally!
 
-        SIFTER_RECIPES.recipeBuilder("samarium_dust_completion")
+        SIFTER_RECIPES.recipeBuilder("rare_earth_separation")
                 .inputItems(dust, GTECMaterials.SamaricResidue,3)
                 .outputItems(dust, Samarium,2)
                 .outputItems(dust, Gadolinium,1)
                 .duration(133).EUt(VA[EV]).save(provider);
-
-        // Cerium Time
-
-        CHEMICAL_RECIPES.recipeBuilder("cerium_chloride_one")
-                .inputItems(dust, GTECMaterials.CeriumDioxide,3)
-                .inputItems(dustSmall, AmmoniumChloride,2)
-                .outputItems(dust, GTECMaterials.CeriumChloride,4)
-                .outputFluids(Ammonia.getFluid(3000))
-                .outputFluids(Steam.getFluid(4000))
-                .duration(300).EUt(VA[HV]).save(provider);
-
-        CHEMICAL_RECIPES.recipeBuilder("cerium_oxalate")
-                .inputItems(dust, GTECMaterials.CeriumChloride,8)
-                .circuitMeta(1)
-                .inputFluids(GTECMaterials.Oxalate.getFluid(3000))
-                .outputItems(dust, GTECMaterials.CeriumOxalate,5)
-                .outputFluids(HydrochloricAcid.getFluid(6000))
-                .duration(300).EUt(VA[HV]).save(provider);
-
-        BLAST_RECIPES.recipeBuilder("cerium_iii_oxide")
-                .inputItems(dust, GTECMaterials.CeriumOxalate,5)
-                .inputItems(dust, Carbon,3)
-                .outputItems(dust, GTECMaterials.CeriumIIIOxide,5)
-                .outputFluids(Chlorine.getFluid(9000))
-                .blastFurnaceTemp(800)
-                .duration(200).EUt(VA[HV]).save(provider);
-
-        // Cerium Completion
-        ELECTROLYZER_RECIPES.recipeBuilder("cerium_dust_completion")
-                .inputItems(dust, GTECMaterials.CeriumDioxide,5)
-                .outputItems(dust, Cerium,2)
-                .outputFluids(Oxygen.getFluid(3000))
-                .duration(70).EUt(VA[MV]).save(provider);
 
         // Uranium Reprocessing
 
@@ -228,12 +195,12 @@ public class MonaziteChainRecipes {
         CHEMICAL_RECIPES.recipeBuilder("hafnium_tetrochloride_solution")
                 .inputItems(dust, GTECMaterials.HafniumTetrachloride,5)
                 .inputFluids(Water.getFluid(2000))
-                .outputFluids(GTECMaterials.HafniumTetrachloride.getFluid(1000))
+                .outputFluids(GTECMaterials.HafniumTetrachlorideSolution.getFluid(1000))
                 .duration(200).EUt(VA[LV]).save(provider);
 
         BLAST_RECIPES.recipeBuilder("low_purity_hafnium")
                 .inputItems(dust, Magnesium,2)
-                .inputFluids(GTECMaterials.HafniumTetrachloride.getFluid(1000))
+                .inputFluids(GTECMaterials.HafniumTetrachlorideSolution.getFluid(1000))
                 .circuitMeta(2)
                 .outputItems(dust, GTECMaterials.LowPurityHafnium,1)
                 .outputItems(dust, MagnesiumChloride,6)
@@ -244,26 +211,132 @@ public class MonaziteChainRecipes {
                 .inputItems(dust, GTECMaterials.LowPurityHafnium,1)
                 .circuitMeta(1)
                 .inputFluids(Iodine.getFluid(4000))
-                .duration(300).EUt(VA[LV]).save(provider);
+                .outputItems(dust, GTECMaterials.HafniumIodide,5)
+                .duration(300).EUt(VA[MV]).save(provider);
 
         BLAST_RECIPES.recipeBuilder("hot_hafnium_ingot")
                 .inputItems(dust, GTECMaterials.HafniumIodide,5)
-                .outputItems(ingot, Hafnium,1)
+                .outputItems(ingotHot, Hafnium,1)
                 .outputFluids(Iodine.getFluid(4000))
                 .blastFurnaceTemp(3400)
-                .duration(600).EUt(VA[LV]).save(provider);
+                .duration(600).EUt(VA[EV]).save(provider);
+        // Zirconium Processing
+        CHEMICAL_RECIPES.recipeBuilder("zirconium_tetrachloride")
+                .inputItems(dust, GTECMaterials.Zirconia,3)
+                .inputFluids(HydrochloricAcid.getFluid(4000))
+                .outputItems(dust, GTECMaterials.ZirconiumTetrachloride,5)
+                .outputFluids(Water.getFluid(2000))
+                .duration(300).EUt(VA[LV]).save(provider);
 
+        CHEMICAL_RECIPES.recipeBuilder("zirconium_tetrochloride_solution")
+                .inputItems(dust, GTECMaterials.ZirconiumTetrachloride,5)
+                .inputFluids(Water.getFluid(2000))
+                .outputFluids(GTECMaterials.ZirconiumTetrachlorideSolution.getFluid(1000))
+                .duration(200).EUt(VA[LV]).save(provider);
 
+        BLAST_RECIPES.recipeBuilder("low_purity_hafnium")
+                .inputItems(dust, Magnesium,2)
+                .inputFluids(GTECMaterials.ZirconiumTetrachlorideSolution.getFluid(1000))
+                .circuitMeta(2)
+                .outputItems(ingotHot, Zirconium,1)
+                .outputItems(dust, MagnesiumChloride,6)
+                .blastFurnaceTemp(4500)
+                .duration(600).EUt(VA[EV]).save(provider);
 
+        // Thorium Dust Part
 
+        //One
+        BLAST_RECIPES.recipeBuilder("thorium_phosphate_concentrate")
+                .inputItems(dust, GTECMaterials.ThoriumPhosphateCake,1)
+                .outputItems(dust, GTECMaterials.ThoriumPhosphateConcentrate,1)
+                .blastFurnaceTemp(1500)
+                .duration(300).EUt(VA[MV]).save(provider);
 
+        THERMAL_CENTRIFUGE_RECIPES.recipeBuilder("thorium_completion_one")
+                .inputItems(dust, GTECMaterials.ThoriumPhosphateConcentrate,1)
+                .outputItems(dust, Thorium,1)
+                .outputItems(dust, Phosphate,1)
+                .duration(200).EUt(VA[HV]).save(provider);
 
+        // Two
+        CHEMICAL_RECIPES.recipeBuilder("aluminium_thorianate_processing")
+                .inputItems(dust, GTECMaterials.ThoriumDioxide,9)
+                .inputItems(dust, Aluminium,4)
+                .outputItems(dust, Thorium,1)
+                .outputItems(dust, GTECMaterials.Alumina,10)
+                .duration(1000).EUt(VA[LV]).save(provider);
 
+        CHEMICAL_RECIPES.recipeBuilder("magnesium_thorianate_processing")
+                .inputItems(dust, GTECMaterials.ThoriumDioxide,3)
+                .inputItems(dust, Magnesium,2)
+                .outputItems(dust, Thorium,1)
+                .outputItems(dust, Magnesia,4)
+                .duration(1000).EUt(VA[LV]).save(provider);
 
+        // Europium Stuff
+        CHEMICAL_RECIPES.recipeBuilder("europium_oxide")
+                .inputItems(dust, GTECMaterials.EuropiumIIIOxide,5)
+                .inputItems(dust, Europium,1)
+                .outputItems(dust, GTECMaterials.EuropiumOxide,6)
+                .duration(300).EUt(VA[LuV]).save(provider);
 
+        ELECTROLYZER_RECIPES.recipeBuilder("decomposition/europium_oxide")
+                .inputItems(dust, GTECMaterials.EuropiumOxide,2)
+                .outputItems(dust, Europium,1)
+                .outputFluids(Oxygen.getFluid(1000))
+                .duration(300).EUt(VA[ZPM]).save(provider);
 
+        // Cerium Stuff
+        CHEMICAL_RECIPES.recipeBuilder("cerium_chloride")
+                .inputItems(dust, GTECMaterials.CeriumDioxide,3)
+                .inputItems(dustSmall, AmmoniumChloride,3)
+                .inputFluids(Hydrogen.getFluid(1000))
+                .outputItems(dust, GTECMaterials.CeriumChloride,4)
+                .outputFluids(Ammonia.getFluid(3000))
+                .outputFluids(Steam.getFluid(2000))
+                .duration(300).EUt(VA[HV]).save(provider);
 
+        CHEMICAL_RECIPES.recipeBuilder("cerium_oxalate")
+                .inputItems(dust, GTECMaterials.CeriumChloride,8)
+                .circuitMeta(1)
+                .inputFluids(GTECMaterials.Oxalate.getFluid(3000))
+                .outputItems(dust, GTECMaterials.CeriumOxalate,5)
+                .outputFluids(HydrochloricAcid.getFluid(6000))
+                .duration(300).EUt(VA[HV]).save(provider);
 
+        BLAST_RECIPES.recipeBuilder("cerium_iii_chloride_ebf")
+                .inputItems(dust, GTECMaterials.CeriumOxalate,5)
+                .inputItems(dust, Carbon,3)
+                .outputItems(dust, GTECMaterials.CeriumIIIOxide,5)
+                .outputFluids(CarbonMonoxide.getFluid(9000))
+                .blastFurnaceTemp(800)
+                .duration(200).EUt(VA[HV]).save(provider);
 
+        ELECTROLYZER_RECIPES.recipeBuilder("decomposition_electrolyzing_bastnasite")
+                .inputItems(dust, GTECMaterials.CeriumIIIOxide,3)
+                .outputItems(dust, Cerium,2)
+                .outputFluids(Oxygen.getFluid(3000))
+                .duration(70).EUt(VA[MV]).save(provider);
+
+        // Oxalate
+        LARGE_CHEMICAL_RECIPES.recipeBuilder("oxalate_creation")
+                .inputItems(dust, GTECMaterials.VanadiumPentoxide,1)
+                .circuitMeta(9)
+                .inputFluids(Methanol.getFluid(9000))
+                .inputFluids(CarbonMonoxide.getFluid(9000))
+                .inputFluids(Oxygen.getFluid(27000))
+                .outputFluids(GTECMaterials.Oxalate.getFluid(9000))
+                .outputFluids(Water.getFluid(9000))
+                .duration(4050).EUt(VA[HV]).save(provider);
+
+        // Vanadium Pentoxide Creation
+        BLAST_RECIPES.recipeBuilder("vanadium_pentoxide")
+                .inputItems(dust, Vanadium,2)
+                .inputFluids(Oxygen.getFluid(5000))
+                .circuitMeta(24)
+                .outputItems(dust, GTECMaterials.VanadiumPentoxide,7)
+                .blastFurnaceTemp(2500)
+                .duration(200).EUt(VA[MV]).save(provider);
     }
+
 }
