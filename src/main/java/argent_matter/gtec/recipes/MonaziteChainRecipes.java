@@ -1,5 +1,6 @@
 package argent_matter.gtec.recipes;
 
+import argent_matter.gtec.GTExtendedChem;
 import argent_matter.gtec.common.data.GTECMaterials;
 import com.sun.jna.platform.win32.WinCrypt;
 import com.sun.jna.platform.win32.WinNT;
@@ -24,7 +25,7 @@ public class MonaziteChainRecipes {
 
     public static void MonazitechainProcesses(Consumer<FinishedRecipe> provider) {
 
-        BLAST_RECIPES.recipeBuilder("monazite_digestion")
+        BLAST_RECIPES.recipeBuilder(GTExtendedChem.id("monazite_digestion"))
                 .inputItems(crushed, Monazite, 2)
                 .inputFluids(NitricAcid.getFluid(700))
                 .outputItems(dust,SiliconDioxide,1)
@@ -32,7 +33,7 @@ public class MonaziteChainRecipes {
                 .blastFurnaceTemp(2400)
                 .duration(400).EUt(VA[EV]).save(provider);
 
-        LARGE_CHEMICAL_RECIPES.recipeBuilder("monazite_rare_earth_solution_dilution")
+        LARGE_CHEMICAL_RECIPES.recipeBuilder(GTExtendedChem.id("monazite_rare_earth_solution_dilution"))
                 .inputItems(dust, Saltpeter,1)
                 .inputFluids(GTECMaterials.MuddyMonaziteRareEarthSolution.getFluid(1000))
                 .inputFluids(Water.getFluid(10000))
@@ -43,7 +44,7 @@ public class MonaziteChainRecipes {
                 .outputFluids(GTECMaterials.DilutedMonaziteRareEarthMud.getFluid(11000))
                 .duration(900).EUt(VA[HV]).save(provider);
 
-        LARGE_CHEMICAL_RECIPES.recipeBuilder("bulk_monazite_rare_earth_solution_dilution")
+        LARGE_CHEMICAL_RECIPES.recipeBuilder(GTExtendedChem.id("bulk_monazite_rare_earth_solution_dilution"))
                 .inputItems(dust, Saltpeter,9)
                 .inputFluids(GTECMaterials.MuddyMonaziteRareEarthSolution.getFluid(9000))
                 .inputFluids(Water.getFluid(90000))

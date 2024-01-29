@@ -493,4 +493,86 @@ public class GTECMaterials {
             .flags(DECOMPOSITION_BY_ELECTROLYZING)
             .buildAndRegister()
             .setFormula("Na2SO4" , true);
+
+    /*
+    // Naquadah Line Stuff
+    public static final Material Ether = new  Material.Builder(GTExtendedChem.id("ether"))
+            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
+            .color(0xE4BF33)
+            .buildAndRegister()
+            .setFormula("CH3CH2OCH2CH3" , true);
+
+    public static final Material AntimonyTrichloride = new  Material.Builder(GTExtendedChem.id("antimony_trichloride"))
+            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
+            .color(0x53B917)
+            .buildAndRegister()
+            .setFormula("SbCl3" , true);
+
+    public static final Material AntimonyPentachloride = new  Material.Builder(GTExtendedChem.id("antimony_pentachloride"))
+            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
+            .color(0x3C8A0D)
+            .buildAndRegister()
+            .setFormula("SbCl5" , true);
+
+    public static final Material AntimonyPentachlorideSolution = new  Material.Builder(GTExtendedChem.id("antimony_pentachloride_solution"))
+            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
+            .color(0x3C8A0D)
+            .buildAndRegister()
+            .setFormula("SbCl5" , true);
+
+    public static final Material AntimonyPentafluoride = new  Material.Builder(GTExtendedChem.id("antimony_pentafluoride"))
+            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
+            .color(0x11D0C6)
+            .buildAndRegister()
+            .setFormula("SbF5" , true);
+
+    public static final Material AntimonyPentafluorideSolution = new  Material.Builder(GTExtendedChem.id("antimony_pentafluoride_solution"))
+            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
+            .color(0x11D0C6)
+            .buildAndRegister()
+            .setFormula("SbF5" , true);
+
+    public static final Material LowQualityNaquadahEmulsion = new  Material.Builder(GTExtendedChem.id("low_quality_naquadah_emulsion"))
+            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
+            .color(0x042422)
+            .buildAndRegister()
+            .setFormula("??NqGaAd??" , true);
+
+    public static final Material LowQualityNaquadahSolution = new  Material.Builder(GTExtendedChem.id("low_quality_naquadah_solution"))
+            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
+            .color(0x383030)
+            .buildAndRegister()
+            .setFormula("??NqAd??" , true);
+
+    public static final Material NaquadahOxideMixture = new  Material.Builder(GTExtendedChem.id("naquadah_oxide_mixture"))
+            .dust(1).iconSet(METALLIC)
+            .color(0x042422)
+            .buildAndRegister()
+            .setFormula("??NqTiGaAd??" , true);
+
+    public static final Material GalliumHydroxide = new  Material.Builder(GTExtendedChem.id("gallium_hydroxide"))
+            .dust(1).iconSet(ROUGH)
+            .color(0x767676)
+            .buildAndRegister()
+            .setFormula("Ga(OH)3" , true);
+
+    public static final Material EthylHexanol = new  Material.Builder(GTExtendedChem.id("ethyl_hexanol"))
+            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder()).iconSet(ROUGH)
+            .color(0x6AC418)
+            .components(Carbon, 8, Hydrogen, 18, Oxygen, 1)
+            .flags(DECOMPOSITION_BY_ELECTROLYZING)
+            .buildAndRegister()
+            .setFormula("C8H18O" , true);
+
+    public static final Material P507 = new  Material.Builder(GTExtendedChem.id("p_507"))
+            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder()).iconSet(ROUGH)
+            .color(0x64C70A)
+            .components(Carbon, 16, Phosphorus, 1, Hydrogen, 35, Oxygen, 3)
+            .flags(DECOMPOSITION_BY_ELECTROLYZING)
+            .buildAndRegister()
+            .setFormula("(C8H17)PO3H" , true);
+
+/*
+This has to wait until a figure out more ways for naquadah processing thats more humane
+     */
 }
