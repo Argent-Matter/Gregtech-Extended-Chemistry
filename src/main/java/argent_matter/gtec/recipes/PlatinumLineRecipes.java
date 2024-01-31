@@ -206,6 +206,42 @@ public class PlatinumLineRecipes {
                 .outputItems(dust, Salt,2)
                 .duration(300).EUt(VA[LV]).save(provider);
 
+        SIFTER_RECIPES.recipeBuilder(GTExtendedChem.id("rhodium_filter_cake"))
+                .inputItems(dust, GTECMaterials.RhodiumNitrate,1)
+                .chancedOutput(dust, GTECMaterials.RhodiumFilterCake,1,1000,0)
+                .chancedOutput(dust, GTECMaterials.RhodiumFilterCake,1,1000,0)
+                .chancedOutput(dust, GTECMaterials.RhodiumFilterCake,1,1000,0)
+                .chancedOutput(dust, GTECMaterials.RhodiumFilterCake,1,1000,0)
+                .chancedOutput(dust, GTECMaterials.RhodiumFilterCake,1,1000,0)
+                .chancedOutput(dust, GTECMaterials.RhodiumFilterCake,1,1500,0)
+                .duration(300).EUt(VA[MV]).save(provider);
+
+        CHEMICAL_RECIPES.recipeBuilder(GTExtendedChem.id("sodium_nitrate"))
+                .inputItems(dust, Sodium,1)
+                .inputFluids(NitricAcid.getFluid(1000))
+                .outputItems(dust, GTECMaterials.SodiumNitrate,5)
+                .outputFluids(Hydrogen.getFluid(1000))
+                .duration(8).EUt(VA[MV]).save(provider);
+
+        MIXER_RECIPES.recipeBuilder(GTExtendedChem.id("rhodium_salt_solution"))
+                .inputItems(dust, GTECMaterials.RhodiumSalt,1)
+                .inputFluids(Water.getFluid(200))
+                .outputFluids(GTECMaterials.RhodiumSaltSolution.getFluid(200))
+                .duration(30).EUt(VA[LV]).save(provider);
+
+        CHEMICAL_RECIPES.recipeBuilder(GTExtendedChem.id("potassium_disulfate"))
+                .inputItems(dust, Potassium,2)
+                .inputItems(dust, Sulfur,2)
+                .inputFluids(Oxygen.getFluid(7000))
+                .outputItems(dust, GTECMaterials.PotassiumDisulfate,11)
+                .duration(42).EUt(VA[MV]).save(provider);
+
+        CHEMICAL_RECIPES.recipeBuilder(GTExtendedChem.id("ammonium_chloride"))
+                .inputFluids(HydrochloricAcid.getFluid(1000))
+                .inputFluids(Ammonia.getFluid(1000))
+                .outputItems(dust, AmmoniumChloride,1)
+                .duration(400).EUt(VA[MV]).save(provider);
+
         MIXER_RECIPES.recipeBuilder(GTExtendedChem.id("rhodium_filter_cake_solution"))
                 .inputItems(dust, GTECMaterials.RhodiumFilterCake,1)
                 .inputFluids(Water.getFluid(1000))
@@ -277,11 +313,10 @@ public class PlatinumLineRecipes {
                 .blastFurnaceTemp(775)
                 .duration(100).EUt(VA[MV]).save(provider);
 
-        BLAST_RECIPES.recipeBuilder("acidic_osmium_solution_separation")
+        DISTILLATION_RECIPES.recipeBuilder("acidic_osmium_solution_separation")
                 .inputFluids(AcidicOsmiumSolution.getFluid(1000))
                 .outputFluids(GTECMaterials.OsmiumSolution.getFluid(100))
-                .outputFluids(Water.getFluid(900))
-                .blastFurnaceTemp(2400)
+                .outputFluids(DilutedHydrochloricAcid.getFluid(180))
                 .duration(150).EUt(VA[IV]).save(provider);
 
         // Osmium Completion <---- Fifth platline output
@@ -289,7 +324,6 @@ public class PlatinumLineRecipes {
         CHEMICAL_RECIPES.recipeBuilder("osmium_tetroxide_separation")
                 .inputFluids(HydrochloricAcid.getFluid(6000))
                 .inputFluids(GTECMaterials.OsmiumSolution.getFluid(1000))
-                .outputFluids(Water.getFluid(900))
                 .outputItems(dust, Osmium,1)
                 .outputFluids(Water.getFluid(2000))
                 .outputFluids(Chlorine.getFluid(7000))

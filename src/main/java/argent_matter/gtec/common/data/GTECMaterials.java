@@ -137,7 +137,7 @@ public class GTECMaterials {
             .dust(1)
             .color(0x498EC2)
             .buildAndRegister()
-            .setFormula("NaNo3", true);
+            .setFormula("NaNO3", true);
 
     public static final Material RhodiumNitrate = new Material.Builder(GTExtendedChem.id("rhodium_nitrate"))
             .dust(1)
