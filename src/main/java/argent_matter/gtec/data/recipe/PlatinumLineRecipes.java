@@ -82,7 +82,7 @@ public class PlatinumLineRecipes {
                 .inputItems(dustSmall, AmmoniumChloride, 2)
                 .circuitMeta(1)
                 .outputItems(dustTiny, GTECMaterials.PlatinumSalt,16)
-                .outputItems(dustTiny, GTECMaterials.RepercipitatedPlatinum,4)
+                .outputItems(dustTiny, GTECMaterials.ReprecipitatedPlatinum,4)
                 .outputFluids(GTECMaterials.PalladiumEnrichedAmmonia.getFluid(400))
                 .outputFluids(NitrogenDioxide.getFluid(1000))
                 .outputFluids(DilutedHydrochloricAcid.getFluid(1000))
@@ -93,7 +93,7 @@ public class PlatinumLineRecipes {
                 .inputItems(dust, AmmoniumChloride, 2)
                 .circuitMeta(1)
                 .outputItems(dust, GTECMaterials.PlatinumSalt,16)
-                .outputItems(dust, GTECMaterials.RepercipitatedPlatinum,4)
+                .outputItems(dust, GTECMaterials.ReprecipitatedPlatinum,4)
                 .outputFluids(GTECMaterials.PalladiumEnrichedAmmonia.getFluid(3600))
                 .outputFluids(NitrogenDioxide.getFluid(9000))
                 .outputFluids(DilutedHydrochloricAcid.getFluid(9000))
@@ -109,7 +109,7 @@ public class PlatinumLineRecipes {
         // Platinum Dust <------ First Platline Output
 
         CHEMICAL_RECIPES.recipeBuilder("raw_platinum_separation")
-                .inputItems(dust, GTECMaterials.RepercipitatedPlatinum,4)
+                .inputItems(dust, GTECMaterials.ReprecipitatedPlatinum,4)
                 .inputItems(dust, Calcium,1)
                 .outputItems(dust, Platinum,2)
                 .outputItems(dust, CalciumChloride,3)
@@ -128,7 +128,7 @@ public class PlatinumLineRecipes {
                 .inputFluids(GTECMaterials.PalladiumEnrichedAmmonia.getFluid(1000))
                 .circuitMeta(1)
                 .outputItems(dustTiny, GTECMaterials.PalladiumSalt,16)
-                .outputItems(dustTiny, GTECMaterials.RepercipitatedPalladium,4)
+                .outputItems(dustTiny, GTECMaterials.ReprecipitatedPalladium,4)
                 .duration(250).EUt(VA[LV]).save(provider);
 
         CHEMICAL_RECIPES.recipeBuilder(GTExtendedChem.id("large_palladium_dusts"))
@@ -136,13 +136,13 @@ public class PlatinumLineRecipes {
                 .inputFluids(GTECMaterials.PalladiumEnrichedAmmonia.getFluid(9000))
                 .circuitMeta(9)
                 .outputItems(dust, GTECMaterials.PalladiumSalt,16)
-                .outputItems(dust, GTECMaterials.RepercipitatedPalladium,4)
+                .outputItems(dust, GTECMaterials.ReprecipitatedPalladium,4)
                 .duration(2250).EUt(VA[LV]).save(provider);
 
         // Palladium Dust <----------- Second Platline Output
 
         CHEMICAL_RECIPES.recipeBuilder("raw_palladium_separation")
-                .inputItems(dust, GTECMaterials.RepercipitatedPalladium,4)
+                .inputItems(dust, GTECMaterials.ReprecipitatedPalladium,4)
                 .inputFluids(GTECMaterials.FormicAcid.getFluid(4000))
                 .outputItems(dust, Palladium,2)
                 .outputFluids(Ammonia.getFluid(4000))

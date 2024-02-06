@@ -59,7 +59,7 @@ public class GTECMaterials {
             .color(0xF0EC9A).iconSet(MaterialIconSet.BRIGHT)
             .buildAndRegister();
 
-    public static final Material RepercipitatedPlatinum = new Material.Builder(GTExtendedChem.id("repercipitated_platinum"))
+    public static final Material ReprecipitatedPlatinum = new Material.Builder(GTExtendedChem.id("reprecipitated__platinum"))
             .dust(1)
             .color(0xF0EC9A).iconSet(MaterialIconSet.BRIGHT)
             .buildAndRegister()
@@ -82,7 +82,7 @@ public class GTECMaterials {
             .color(0x65655E).iconSet(METALLIC)
             .buildAndRegister();
 
-    public static final Material RepercipitatedPalladium = new Material.Builder(GTExtendedChem.id("reprecipitated_palladium"))
+    public static final Material ReprecipitatedPalladium = new Material.Builder(GTExtendedChem.id("reprecipitated_palladium"))
             .dust(1)
             .color(0x65655E).iconSet(METALLIC)
             .buildAndRegister()

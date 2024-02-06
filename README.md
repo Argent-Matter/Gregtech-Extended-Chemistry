@@ -10,4 +10,8 @@
 - currently the mod has a modified version of GTNH platline to be more realistic with progression
 - i may take some chains from GTNH but it will not be completely the same i will look into some realism
 
+-Custom Stuff:
+
+-ECHO Circuits (ZPM, UV, UHV, UEV)<---- ONE TIER ABOVE WETWARE
+
 # Have fun!
