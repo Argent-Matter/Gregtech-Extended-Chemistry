@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gtec:item/echo_processor_supercomputer"
+  }
+}

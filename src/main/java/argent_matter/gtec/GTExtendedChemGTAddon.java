@@ -1,7 +1,7 @@
 package argent_matter.gtec;
 
 import argent_matter.gtec.common.data.GTECRecipes;
-import argent_matter.gtec.common.data.GTECRegistries;
+import argent_matter.gtec.registry.GTECRegistries;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;

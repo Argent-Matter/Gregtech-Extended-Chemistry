@@ -1,4 +1,4 @@
-package argent_matter.gtec.common.data;
+package argent_matter.gtec.registry;
 
 import argent_matter.gtec.GTExtendedChem;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;

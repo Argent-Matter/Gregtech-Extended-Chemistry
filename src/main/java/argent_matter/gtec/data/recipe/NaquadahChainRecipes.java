@@ -1,4 +1,4 @@
-package argent_matter.gtec.recipes;
+package argent_matter.gtec.data.recipe;
 
 /*
 import argent_matter.gtec.GTExtendedChem;

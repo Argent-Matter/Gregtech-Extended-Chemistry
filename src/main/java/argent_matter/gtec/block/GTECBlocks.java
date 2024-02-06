@@ -1,4 +1,4 @@
-package argent_matter.gtec.common.data;
+package argent_matter.gtec.block;
 
 @SuppressWarnings("unused")
 public class GTECBlocks {

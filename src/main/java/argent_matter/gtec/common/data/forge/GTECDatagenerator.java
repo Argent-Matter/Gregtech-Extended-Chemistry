@@ -2,8 +2,6 @@ package argent_matter.gtec.common.data.forge;
 
 import argent_matter.gtec.GTExtendedChem;
 import com.gregtechceu.gtceu.api.registry.registrate.SoundEntryBuilder;
-import com.gregtechceu.gtceu.data.forge.BiomeTagsProviderImpl;
-import com.gregtechceu.gtceu.data.forge.GTRegistriesDatapackGenerator;
 import net.minecraft.Util;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistryAccess;
@@ -34,9 +32,6 @@ public class GTECDatagenerator {
         if (event.includeServer()) {
             var set = Set.of(GTExtendedChem.MOD_ID);
             generator.addProvider(true, new SoundEntryBuilder.SoundEntryProvider(generator.getPackOutput(), GTExtendedChem.MOD_ID));
-            generator.addProvider(true, new GTRegistriesDatapackGenerator(
-                    generator.getPackOutput(), registryAccess, new RegistrySetBuilder(),
-                    set, "Worldgen Data"));
         }
     }
 }
