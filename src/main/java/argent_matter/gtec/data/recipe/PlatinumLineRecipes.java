@@ -254,6 +254,15 @@ public class PlatinumLineRecipes {
                 .outputItems(dust, GTECMaterials.ReprecipitatedRhodium,1)
                 .duration(300).EUt(VA[LV]).save(provider);
 
+        // Zinc Sulfate reprocessing
+
+        CHEMICAL_RECIPES.recipeBuilder(GTExtendedChem.id("zinc_sulfate"))
+                .inputItems(dust, GTECMaterials.ZincSulfate, 6)
+                .inputFluids(Hydrogen.getFluid(2000))
+                .outputItems(dust, Zinc, 1)
+                .outputFluids(SulfuricAcid.getFluid(1000))
+                .duration(30).EUt(VA[ULV]).save(provider);
+
         // Rhodium Dust Output <------------ Third Platline Dust also holy shit
 
         CHEMICAL_RECIPES.recipeBuilder("rhodium_dust")

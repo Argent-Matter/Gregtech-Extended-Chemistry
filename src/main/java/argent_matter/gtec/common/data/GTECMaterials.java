@@ -59,7 +59,7 @@ public class GTECMaterials {
             .color(0xF0EC9A).iconSet(MaterialIconSet.BRIGHT)
             .buildAndRegister();
 
-    public static final Material ReprecipitatedPlatinum = new Material.Builder(GTExtendedChem.id("reprecipitated__platinum"))
+    public static final Material ReprecipitatedPlatinum = new Material.Builder(GTExtendedChem.id("reprecipitated_platinum"))
             .dust(1)
             .color(0xF0EC9A).iconSet(MaterialIconSet.BRIGHT)
             .buildAndRegister()
@@ -130,6 +130,8 @@ public class GTECMaterials {
     public static final Material ZincSulfate = new Material.Builder(GTExtendedChem.id("zinc_sulfate"))
             .dust(1)
             .color(0x7C4D0E).iconSet(METALLIC)
+            .flags(DECOMPOSITION_BY_ELECTROLYZING)
+            .components(Zinc, 1, Sulfur, 1, Oxygen, 4)
             .buildAndRegister()
             .setFormula("ZnSO4", true);
 
