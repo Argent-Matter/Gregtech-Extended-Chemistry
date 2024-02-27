@@ -130,6 +130,8 @@ public class GTECMaterials {
     public static final Material ZincSulfate = new Material.Builder(GTExtendedChem.id("zinc_sulfate"))
             .dust(1)
             .color(0x7C4D0E).iconSet(METALLIC)
+            .flags(DECOMPOSITION_BY_ELECTROLYZING)
+            .components(Zinc, 1, Sulfur, 1, Oxygen, 4)
             .buildAndRegister()
             .setFormula("ZnSO4", true);
 
