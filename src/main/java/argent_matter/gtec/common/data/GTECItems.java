@@ -1,5 +1,6 @@
 package argent_matter.gtec.common.data;
 
+import argent_matter.gtec.registry.GTECCreativeModeTabs;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import static argent_matter.gtec.registry.GTECRegistries.REGISTRATE;
 import net.minecraft.world.item.Item;
@@ -7,6 +8,10 @@ import net.minecraft.world.item.Item;
 
 @SuppressWarnings("Convert2MethodRef")
 public class GTECItems {
+    static {
+        REGISTRATE.creativeModeTab(() -> GTECCreativeModeTabs.ITEM);
+    }
+
 
     // Echo Circuit Stuff
     public static final ItemEntry<Item> PETRIDISHWITHSCULKCULTURE = REGISTRATE.item("petri_dish_with_sculk_culture", Item::new)
@@ -44,6 +49,5 @@ public class GTECItems {
             .register();
 
     public static void init() {
-
     }
 }
