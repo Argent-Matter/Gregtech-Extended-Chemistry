@@ -186,6 +186,12 @@ public class MonaziteChainRecipes {
                 .duration(1000).EUt(VA[LV]).save(provider);
 
         // Hafnium Processing
+        CENTRIFUGE_RECIPES.recipeBuilder("hafnia_zirconia")
+                .inputItems(dust, GTECMaterials.HafniaZirconiaBlend, 1)
+                .outputItems(dust, GTECMaterials.Hafnia, 3)
+                .outputItems(dust, GTECMaterials.Zirconia, 3)
+                .duration(600).EUt(VA[LV]).save(provider);
+
         CHEMICAL_RECIPES.recipeBuilder("hafnium_tetrachloride")
                 .inputItems(dust, GTECMaterials.Hafnia,3)
                 .inputFluids(HydrochloricAcid.getFluid(4000))
