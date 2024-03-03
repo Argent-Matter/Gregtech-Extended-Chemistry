@@ -55,6 +55,14 @@ public class MonaziteChainRecipes {
                 .outputFluids(GTECMaterials.DilutedMonaziteRareEarthMud.getFluid(99000))
                 .duration(8100).EUt(VA[HV]).save(provider);
 
+        CHEMICAL_BATH_RECIPES.recipeBuilder(GTExtendedChem.id("rare_earth_recycle"))
+                .inputItems(dust, RareEarth, 3)
+                .inputFluids(SulfuricAcid.getFluid(1000))
+                .outputItems(crushed, Monazite, 2)
+                .outputItems(crushed, Monazite, 2)
+                .outputItems(crushed, Monazite, 2)
+                .duration(1200).EUt(VA[HV]).save(provider);
+
         ELECTROLYZER_RECIPES.recipeBuilder("decomposition_electrolyzing_monazite")
                 .inputFluids(GTECMaterials.DilutedMonaziteRareEarthMud.getFluid(1000))
                 .chancedOutput(dust, GTECMaterials.MonaziteSulfate, 9000,10)
@@ -186,6 +194,12 @@ public class MonaziteChainRecipes {
                 .duration(1000).EUt(VA[LV]).save(provider);
 
         // Hafnium Processing
+        CENTRIFUGE_RECIPES.recipeBuilder("hafnia_zirconia")
+                .inputItems(dust, GTECMaterials.HafniaZirconiaBlend, 1)
+                .outputItems(dust, GTECMaterials.Hafnia, 3)
+                .outputItems(dust, GTECMaterials.Zirconia, 3)
+                .duration(600).EUt(VA[LV]).save(provider);
+
         CHEMICAL_RECIPES.recipeBuilder("hafnium_tetrachloride")
                 .inputItems(dust, GTECMaterials.Hafnia,3)
                 .inputFluids(HydrochloricAcid.getFluid(4000))
@@ -235,7 +249,7 @@ public class MonaziteChainRecipes {
                 .outputFluids(GTECMaterials.ZirconiumTetrachlorideSolution.getFluid(1000))
                 .duration(200).EUt(VA[LV]).save(provider);
 
-        BLAST_RECIPES.recipeBuilder("low_purity_hafnium")
+        BLAST_RECIPES.recipeBuilder("low_purity_zirconium")
                 .inputItems(dust, Magnesium,2)
                 .inputFluids(GTECMaterials.ZirconiumTetrachlorideSolution.getFluid(1000))
                 .circuitMeta(2)
@@ -263,7 +277,7 @@ public class MonaziteChainRecipes {
         CHEMICAL_RECIPES.recipeBuilder("aluminium_thorianate_processing")
                 .inputItems(dust, GTECMaterials.ThoriumDioxide,9)
                 .inputItems(dust, Aluminium,4)
-                .outputItems(dust, Thorium,1)
+                .outputItems(dust, Thorium,3)
                 .outputItems(dust, GTECMaterials.Alumina,10)
                 .duration(1000).EUt(VA[LV]).save(provider);
 
@@ -273,6 +287,16 @@ public class MonaziteChainRecipes {
                 .outputItems(dust, Thorium,1)
                 .outputItems(dust, Magnesia,4)
                 .duration(1000).EUt(VA[LV]).save(provider);
+
+        // Extra Alumina EBF processing
+
+        BLAST_RECIPES.recipeBuilder("alumina_blasting")
+                .inputItems(dust, GTECMaterials.Alumina, 10)
+                .inputItems(dust, Carbon, 3)
+                .outputItems(ingot, Aluminium, 4)
+                .outputFluids(CarbonDioxide.getFluid(3000))
+                .blastFurnaceTemp(1700)
+                .duration(1200).EUt(VA[MV]).save(provider);
 
         // Europium Stuff
         CHEMICAL_RECIPES.recipeBuilder("europium_oxide")
