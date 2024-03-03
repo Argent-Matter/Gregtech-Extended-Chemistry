@@ -241,7 +241,7 @@ public class MonaziteChainRecipes {
                 .outputFluids(GTECMaterials.ZirconiumTetrachlorideSolution.getFluid(1000))
                 .duration(200).EUt(VA[LV]).save(provider);
 
-        BLAST_RECIPES.recipeBuilder("low_purity_hafnium")
+        BLAST_RECIPES.recipeBuilder("low_purity_zirconium")
                 .inputItems(dust, Magnesium,2)
                 .inputFluids(GTECMaterials.ZirconiumTetrachlorideSolution.getFluid(1000))
                 .circuitMeta(2)
