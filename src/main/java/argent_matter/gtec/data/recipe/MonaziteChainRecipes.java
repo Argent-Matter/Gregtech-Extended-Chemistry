@@ -55,6 +55,14 @@ public class MonaziteChainRecipes {
                 .outputFluids(GTECMaterials.DilutedMonaziteRareEarthMud.getFluid(99000))
                 .duration(8100).EUt(VA[HV]).save(provider);
 
+        CHEMICAL_BATH_RECIPES.recipeBuilder(GTExtendedChem.id("rare_earth_recycle"))
+                .inputItems(dust, Monazite, 3)
+                .inputFluids(SulfuricAcid.getFluid(1000))
+                .outputItems(crushed, Monazite, 2)
+                .outputItems(crushed, Monazite, 2)
+                .outputItems(crushed, Monazite, 2)
+                .duration(1200).EUt(VA[HV]).save(provider);
+
         ELECTROLYZER_RECIPES.recipeBuilder("decomposition_electrolyzing_monazite")
                 .inputFluids(GTECMaterials.DilutedMonaziteRareEarthMud.getFluid(1000))
                 .chancedOutput(dust, GTECMaterials.MonaziteSulfate, 9000,10)
