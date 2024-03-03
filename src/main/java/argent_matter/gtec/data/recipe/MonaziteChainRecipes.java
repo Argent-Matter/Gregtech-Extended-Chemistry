@@ -263,7 +263,7 @@ public class MonaziteChainRecipes {
         CHEMICAL_RECIPES.recipeBuilder("aluminium_thorianate_processing")
                 .inputItems(dust, GTECMaterials.ThoriumDioxide,9)
                 .inputItems(dust, Aluminium,4)
-                .outputItems(dust, Thorium,1)
+                .outputItems(dust, Thorium,3)
                 .outputItems(dust, GTECMaterials.Alumina,10)
                 .duration(1000).EUt(VA[LV]).save(provider);
 
@@ -273,6 +273,16 @@ public class MonaziteChainRecipes {
                 .outputItems(dust, Thorium,1)
                 .outputItems(dust, Magnesia,4)
                 .duration(1000).EUt(VA[LV]).save(provider);
+
+        // Extra Alumina EBF processing
+
+        BLAST_RECIPES.recipeBuilder("alumina_blasting")
+                .inputItems(dust, GTECMaterials.Alumina, 10)
+                .inputItems(dust, Carbon, 3)
+                .outputItems(ingot, Aluminium, 4)
+                .outputFluids(CarbonDioxide.getFluid(3000))
+                .blastFurnaceTemp(1700)
+                .duration(1200).EUt(VA[MV]).save(provider);
 
         // Europium Stuff
         CHEMICAL_RECIPES.recipeBuilder("europium_oxide")

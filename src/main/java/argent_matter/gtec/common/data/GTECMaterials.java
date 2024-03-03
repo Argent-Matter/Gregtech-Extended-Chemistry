@@ -465,6 +465,8 @@ public class GTECMaterials {
     public static final Material Alumina = new  Material.Builder(GTExtendedChem.id("alumina"))
             .dust()
             .color(0x64B5BF).iconSet(SHINY)
+            .components(Aluminium, 2, Oxygen, 3)
+            .flags(DECOMPOSITION_BY_ELECTROLYZING)
             .buildAndRegister()
             .setFormula("Al2O3", true);
 
