@@ -56,7 +56,7 @@ public class MonaziteChainRecipes {
                 .duration(8100).EUt(VA[HV]).save(provider);
 
         CHEMICAL_BATH_RECIPES.recipeBuilder(GTExtendedChem.id("rare_earth_recycle"))
-                .inputItems(dust, Monazite, 3)
+                .inputItems(dust, RareEarth, 3)
                 .inputFluids(SulfuricAcid.getFluid(1000))
                 .outputItems(crushed, Monazite, 2)
                 .outputItems(crushed, Monazite, 2)
