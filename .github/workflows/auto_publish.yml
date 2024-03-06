@@ -60,7 +60,7 @@ jobs:
         name: Get Version
         id: var
         run: |
-          MESSAGE=$(ls build/libs/* | grep sources.jar -v | grep shadow.jar -v | awk -F 'gtec-forge-|.jar' '{print $2}')
+          MESSAGE=$(ls build/libs/* | grep sources.jar -v | grep shadow.jar -v | awk -F 'gtec-|.jar' '{print $2}')
           echo version=$MESSAGE >> $GITHUB_OUTPUT
 
       - if: ${{ inputs.publishCurseForgeAndModrinth }}
@@ -81,7 +81,7 @@ jobs:
             build/libs/!(*-@(dev|sources|javadoc|dev-shadow)).jar
             build/libs/*-@(dev|sources|javadoc|dev-shadow).jar
 
-          name: GCyR ${{ steps.var.outputs.version }}
+          name: GTEC ${{ steps.var.outputs.version }}
           version: mc${{ steps.var.outputs.version }}
           version-type: ${{ inputs.releaseType }}
           changelog-file: CHANGELOG.*
