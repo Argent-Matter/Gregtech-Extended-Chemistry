@@ -11,6 +11,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEv
 import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistry;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
+import com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +22,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(GTExtendedChem.MOD_ID)
 public class GTExtendedChem {
     public static final String MOD_ID = "gtec";
+
+    public static final CleanroomType CLEANER_ROOM = new CleanroomType("cleanerroom", "gtec.recipe.cleanerroom.displayname");
     public static MaterialRegistry MATERIAL_REGISTRY;
 
     public GTExtendedChem() {

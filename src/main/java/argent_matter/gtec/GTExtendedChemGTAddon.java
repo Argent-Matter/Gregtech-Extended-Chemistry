@@ -1,5 +1,7 @@
 package argent_matter.gtec;
 
+import argent_matter.gtec.block.CleanroomFilterType;
+import argent_matter.gtec.block.GTECBlocks;
 import argent_matter.gtec.common.data.GTECRecipes;
 import argent_matter.gtec.registry.GTECRegistries;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
@@ -7,6 +9,7 @@ import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;
 
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import com.gregtechceu.gtceu.common.data.GTBlocks;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -20,6 +23,7 @@ public class GTExtendedChemGTAddon implements IGTAddon {
 
     @Override
     public void initializeAddon() {
+        GTBlocks.ALL_FILTERS.put(CleanroomFilterType.INSTANCE, GTECBlocks.ULTRA_STERILIZING_FILTER_CASING);
 
     }
 

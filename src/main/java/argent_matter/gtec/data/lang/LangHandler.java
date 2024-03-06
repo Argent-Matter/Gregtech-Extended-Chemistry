@@ -16,6 +16,7 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
 
 
     public static void init(RegistrateLangProvider provider) {
+        provider.add("gtec.recipe.cleanerroom.display_name", "Ultra-sterile Cleanroom");
         initItemTooltips(provider);
 
     }
