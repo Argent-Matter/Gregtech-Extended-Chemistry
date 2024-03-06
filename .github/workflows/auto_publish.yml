@@ -7,7 +7,7 @@ on:
         description: 'release type'
         required: true
         type: choice
-        default: 'beta'
+        default: 'alpha'
         options:
           - 'release'
           - 'beta'
@@ -60,31 +60,29 @@ jobs:
         name: Get Version
         id: var
         run: |
-          echo fabric_version=$MESSAGE >> $GITHUB_OUTPUT
-          MESSAGE=$(ls forge/build/libs/* | grep sources.jar -v | grep shadow.jar -v | awk -F 'gcyr-forge-|.jar' '{print $2}')
-          echo forge_version=$MESSAGE >> $GITHUB_OUTPUT
-
+          MESSAGE=$(ls build/libs/* | grep sources.jar -v | grep shadow.jar -v | awk -F 'gtec-forge-|.jar' '{print $2}')
+          echo version=$MESSAGE >> $GITHUB_OUTPUT
 
       - if: ${{ inputs.publishCurseForgeAndModrinth }}
-        name: mc-publish-forge
-        uses: Kir-Antipov/mc-publish@v3.3
+        name: mc-publish
+        uses: Kir-Antipov/mc-publish@v3.3.0
         with:
           # Only include this section if you wish to publish
           # your assets on Modrinth.
-          modrinth-id: 4VJrCEMZ
+          modrinth-id:
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
           # Only include this section if you wish to publish
           # your assets on CurseForge.
-          curseforge-id: 922713
+          curseforge-id: 982880
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           files: |
             build/libs/!(*-@(dev|sources|javadoc|dev-shadow)).jar
             build/libs/*-@(dev|sources|javadoc|dev-shadow).jar
 
-          name: GTEC ${{ steps.var.outputs.forge_version }}-forge
-          version: mc${{ steps.var.outputs.forge_version }}-forge
+          name: GCyR ${{ steps.var.outputs.version }}
+          version: mc${{ steps.var.outputs.version }}
           version-type: ${{ inputs.releaseType }}
           changelog-file: CHANGELOG.*
 
