@@ -1,5 +1,5 @@
-package argent_matter.gtec.data.recipe;
-
+package argent_matter.gtec.data.recipe.disabled;
+/*
 import argent_matter.gtec.common.data.GTECItems;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
@@ -28,3 +28,4 @@ public class CircuitRecipes {
     public static void circuitBoardRecipess(Consumer<FinishedRecipe> provider) {
     }
 }
+*/

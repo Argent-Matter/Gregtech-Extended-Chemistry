@@ -32,7 +32,88 @@ public class GTECMaterials {
         Iodine.getProperty(PropertyKey.FLUID).getStorage().enqueueRegistration(FluidStorageKeys.GAS, new FluidBuilder());
     }
 
+// Starting Over...
 
+    // Nuclear Update
+    public static final Material URANIUM_CONCENTRATE = new Material.Builder(GTExtendedChem.id("uranium_concentrate"))
+            .dust(1)
+            .color(0x877924).iconSet(DULL)
+            .buildAndRegister()
+            .setFormula("U3O8", true);
+
+    public static final Material SODIUM_CARBONATE = new Material.Builder(GTExtendedChem.id("sodium_carbonate"))
+            .dust(1)
+            .color(0xD6D6D6).iconSet(SHINY)
+            .buildAndRegister()
+            .setFormula("Na2CO3", true);
+
+    public static final Material URANIUM_LEACHATE = new Material.Builder(GTExtendedChem.id("uranium_leachate"))
+            .fluid()
+            .color(0xA3D14C).iconSet(DULL)
+            .buildAndRegister();
+
+    public static final Material TRIBUTYL_PHOSPHATE = new Material.Builder(GTExtendedChem.id("tributyl_phosphate"))
+            .fluid()
+            .color(0xA3D14C).iconSet(SHINY)
+            .buildAndRegister()
+            .setFormula("Na2CO3", true);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     // PlatinumLine
     public static final Material PlatinumMetallicPowder = new Material.Builder(GTExtendedChem.id("platinum_metallic_powder"))
             .dust(1)
@@ -221,8 +302,6 @@ public class GTECMaterials {
             .color(0x694B20)
             .buildAndRegister()
             .setFormula("???", true);
-
-
     // Monazite Chain Materials
 
     public static final Material MuddyMonaziteRareEarthSolution = new Material.Builder(GTExtendedChem.id("muddy_monazite_rare_earth_solution"))
@@ -496,136 +575,53 @@ public class GTECMaterials {
             .buildAndRegister()
             .setFormula("Na2SO4", true);
 
-    /*
-    // Naquadah Line Stuff
-    public static final Material Ether = new  Material.Builder(GTExtendedChem.id("ether"))
-            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
-            .color(0xE4BF33)
-            .buildAndRegister()
-            .setFormula("CH3CH2OCH2CH3" , true);
-
-    public static final Material AntimonyTrichloride = new  Material.Builder(GTExtendedChem.id("antimony_trichloride"))
-            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
-            .color(0x53B917)
-            .buildAndRegister()
-            .setFormula("SbCl3" , true);
-
-    public static final Material AntimonyPentachloride = new  Material.Builder(GTExtendedChem.id("antimony_pentachloride"))
-            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
-            .color(0x3C8A0D)
-            .buildAndRegister()
-            .setFormula("SbCl5" , true);
-
-    public static final Material AntimonyPentachlorideSolution = new  Material.Builder(GTExtendedChem.id("antimony_pentachloride_solution"))
-            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
-            .color(0x3C8A0D)
-            .buildAndRegister()
-            .setFormula("SbCl5" , true);
-
-    public static final Material AntimonyPentafluoride = new  Material.Builder(GTExtendedChem.id("antimony_pentafluoride"))
-            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
-            .color(0x11D0C6)
-            .buildAndRegister()
-            .setFormula("SbF5" , true);
-
-    public static final Material AntimonyPentafluorideSolution = new  Material.Builder(GTExtendedChem.id("antimony_pentafluoride_solution"))
-            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
-            .color(0x11D0C6)
-            .buildAndRegister()
-            .setFormula("SbF5" , true);
-
-    public static final Material LowQualityNaquadahEmulsion = new  Material.Builder(GTExtendedChem.id("low_quality_naquadah_emulsion"))
-            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
-            .color(0x042422)
-            .buildAndRegister()
-            .setFormula("??NqGaAd??" , true);
-
-    public static final Material LowQualityNaquadahSolution = new  Material.Builder(GTExtendedChem.id("low_quality_naquadah_solution"))
-            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder())
-            .color(0x383030)
-            .buildAndRegister()
-            .setFormula("??NqAd??" , true);
-
-    public static final Material NaquadahOxideMixture = new  Material.Builder(GTExtendedChem.id("naquadah_oxide_mixture"))
-            .dust(1).iconSet(METALLIC)
-            .color(0x042422)
-            .buildAndRegister()
-            .setFormula("??NqTiGaAd??" , true);
-
-    public static final Material GalliumHydroxide = new  Material.Builder(GTExtendedChem.id("gallium_hydroxide"))
-            .dust(1).iconSet(ROUGH)
-            .color(0x767676)
-            .buildAndRegister()
-            .setFormula("Ga(OH)3" , true);
-
-    public static final Material EthylHexanol = new  Material.Builder(GTExtendedChem.id("ethyl_hexanol"))
-            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder()).iconSet(ROUGH)
-            .color(0x6AC418)
-            .components(Carbon, 8, Hydrogen, 18, Oxygen, 1)
-            .flags(DECOMPOSITION_BY_ELECTROLYZING)
-            .buildAndRegister()
-            .setFormula("C8H18O" , true);
-
-    public static final Material P507 = new  Material.Builder(GTExtendedChem.id("p_507"))
-            .fluid(FluidStorageKeys.LIQUID, new FluidBuilder()).iconSet(ROUGH)
-            .color(0x64C70A)
-            .components(Carbon, 16, Phosphorus, 1, Hydrogen, 35, Oxygen, 3)
-            .flags(DECOMPOSITION_BY_ELECTROLYZING)
-            .buildAndRegister()
-            .setFormula("(C8H17)PO3H" , true);
-
-/*
-This has to wait until a figure out more ways for naquadah processing thats more humane
-     */
-
-
     // Bastnasite Chain Stuff
     public static final Material MuddyBastnasiteRareEarthSolution = new Material.Builder(GTExtendedChem.id("muddy_bastnasite_rare_earth_solution"))
             .fluid()
             .color(0xA6501E)
             .buildAndRegister()
-            .setFormula("??LaCeY??" , true);
+            .setFormula("??LaCeY??", true);
 
     public static final Material SteamCrackedMuddyBastnasiteRareEarthSolution = new Material.Builder(GTExtendedChem.id("steam_cracked_muddy_bastnasite_rare_earth_solution"))
             .fluid()
             .color(0x9E4C1C)
             .buildAndRegister()
-            .setFormula("??LaCeY??" , true);
+            .setFormula("??LaCeY??", true);
 
 
     public static final Material HexafluorosilicAcid = new Material.Builder(GTExtendedChem.id("hexafluorosilic_acid"))
             .fluid()
             .color(0x2E6AB9)
             .buildAndRegister()
-            .setFormula("H2SiF6" , true);
+            .setFormula("H2SiF6", true);
 
 
     public static final Material Sodiumfluorosilicate = new Material.Builder(GTExtendedChem.id("sodiumfluorosilicate"))
             .fluid()
             .color(0xB7801B)
             .buildAndRegister()
-            .setFormula("Na2SiF6" , true);
+            .setFormula("Na2SiF6", true);
 
 
     public static final Material ConditionedBastnasiteMud = new Material.Builder(GTExtendedChem.id("conditioned_bastnasite_mud"))
             .fluid()
             .color(0xA6501E)
             .buildAndRegister()
-            .setFormula("??LaCeY??" , true);
+            .setFormula("??LaCeY??", true);
 
 
     public static final Material DilutedBastnasiteMud = new Material.Builder(GTExtendedChem.id("diluted_bastnasite_mud"))
             .fluid()
             .color(0xA6501E)
             .buildAndRegister()
-            .setFormula("??LaCeY??" , true);
+            .setFormula("??LaCeY??", true);
 
 
     public static final Material FilteredBastnasiteMud = new Material.Builder(GTExtendedChem.id("filtered_bastnasite_mud"))
             .fluid()
             .color(0xA6501E)
             .buildAndRegister()
-            .setFormula("??LaCeY??" , true);
+            .setFormula("??LaCeY??", true);
 
     public static final Material BastnasiteRareEarthOxides = new Material.Builder(GTExtendedChem.id("bastnasite_rare_earth_oxides"))
             .dust(1).iconSet(METALLIC)
@@ -636,7 +632,7 @@ This has to wait until a figure out more ways for naquadah processing thats more
             .dust(1).iconSet(ROUGH)
             .color(0xA6501E)
             .buildAndRegister()
-            .setFormula("??LaCeY??" , true);
+            .setFormula("??LaCeY??", true);
 
     public static final Material RoastedRareEarthOxides = new Material.Builder(GTExtendedChem.id("roasted_rare_earth_oxides"))
             .dust(1).iconSet(METALLIC)
@@ -666,13 +662,13 @@ This has to wait until a figure out more ways for naquadah processing thats more
             .dust().iconSet(METALLIC)
             .color(0xA6501)
             .buildAndRegister()
-            .setFormula("??LaNdPr?" , true);
+            .setFormula("??LaNdPr?", true);
 
     public static final Material SamaricRareEarthConcentrate = new Material.Builder(GTExtendedChem.id("samaric_rare_earth_concentrate"))
             .dust().iconSet(METALLIC)
             .color(0xA6501)
             .buildAndRegister()
-            .setFormula("??SmHoTb??" , true);
+            .setFormula("??SmHoTb??", true);
     public static final Material DilutedAcetone = new Material.Builder(GTExtendedChem.id("diluted_acetone"))
             .fluid()
             .color(0xFFFFFF)
@@ -682,25 +678,25 @@ This has to wait until a figure out more ways for naquadah processing thats more
             .dust().iconSet(METALLIC)
             .color(0xCEA5B7)
             .buildAndRegister()
-            .setFormula("??SmHo??" , true);
+            .setFormula("??SmHo??", true);
 
     public static final Material SamariumTerbiumMixture = new Material.Builder(GTExtendedChem.id("samarium_terbium_mixture"))
             .dust().iconSet(METALLIC)
             .color(0xBC9BAA)
             .buildAndRegister()
-            .setFormula("??SmTb??" , true);
+            .setFormula("??SmTb??", true);
 
     public static final Material NitrogenatedSamariumTerbiumMixture = new Material.Builder(GTExtendedChem.id("nitrogenated_samarium_terbium_mixture"))
             .dust().iconSet(METALLIC)
             .color(0xBC9BAA)
             .buildAndRegister()
-            .setFormula("??SmTbY??NH4NO3" , true);
+            .setFormula("??SmTbY??NH4NO3", true);
 
     public static final Material TerbiumNitrate = new Material.Builder(GTExtendedChem.id("terbium_nitrate"))
             .dust().iconSet(METALLIC)
             .color(0x56C14D)
             .buildAndRegister()
-            .setFormula("TbNO3" , true);
+            .setFormula("TbNO3", true);
 
     public static final Material CalciumFluoride = new Material.Builder(GTExtendedChem.id("calcium_fluoride"))
             .fluid()
@@ -709,7 +705,7 @@ This has to wait until a figure out more ways for naquadah processing thats more
             .flags(DECOMPOSITION_BY_ELECTROLYZING)
             .color(0xC5CBC4)
             .buildAndRegister()
-            .setFormula("CaF2" , true);
+            .setFormula("CaF2", true);
 
     public static final Material HydratedAmmoniumNitrateSlurry = new Material.Builder(GTExtendedChem.id("hydrated_ammonium_nitrate_slurry"))
             .fluid()
@@ -720,17 +716,71 @@ This has to wait until a figure out more ways for naquadah processing thats more
             .dust()
             .color(0xB767D1)
             .buildAndRegister()
-            .setFormula("N2H4O3" , true);
+            .setFormula("N2H4O3", true);
 
     public static final Material LanthanumChloride = new Material.Builder(GTExtendedChem.id("lanthanum_chloride"))
             .dust().iconSet(METALLIC)
             .color(0x4C6B4E)
             .buildAndRegister()
-            .setFormula("LaCl3" , true);
+            .setFormula("LaCl3", true);
 
     public static final Material NeodymiumOxide = new Material.Builder(GTExtendedChem.id("neodymium_oxide"))
             .dust().iconSet(METALLIC)
             .color(0x4C6B4E)
             .buildAndRegister()
-            .setFormula("Nd2O3" , true);
+            .setFormula("Nd2O3", true);
+
+
+// The New Platinum Line Stuff
+
+    public static final Material RoastedCooperite = new Material.Builder(GTExtendedChem.id("roasted_cooperite"))
+            .dust().iconSet(ROUGH)
+            .color(0x908129)
+            .buildAndRegister()
+            .setFormula("IDK YET", true);
+
+    public static final Material NickelDepletedCooperite = new Material.Builder(GTExtendedChem.id("nickel_depleted_cooperite"))
+            .dust().iconSet(METALLIC)
+            .color(0x908129)
+            .buildAndRegister()
+            .setFormula("Ni?", true);
+
+    public static final Material CooperiteSolution = new Material.Builder(GTExtendedChem.id("cooperite_solution"))
+            .fluid()
+            .color(0x908129)
+            .buildAndRegister()
+            .setFormula("Ni?", true);
+
+    public static final Material NickelCarboryl = new Material.Builder(GTExtendedChem.id("nickel_carboryl"))
+            .fluid()
+            .flags(DECOMPOSITION_BY_ELECTROLYZING)
+            .color(0x4DAA9D)
+            .components(Nickel, 1, CarbonMonoxide, 4)
+            .buildAndRegister();
+
+    public static final Material PlatinumDepletedCooperiteSolution = new Material.Builder(GTExtendedChem.id("platinum_depleted_cooperite_solution"))
+            .fluid()
+            .color(0xB9B344)
+            .buildAndRegister();
+
+    public static final Material AmmoniumHexachloroplatinate = new Material.Builder(GTExtendedChem.id("ammonium_hexachloroplatinate"))
+            .dust().iconSet(METALLIC)
+            .color(0xCECA7B)
+            .buildAndRegister();
+
+    public static final Material AmmoniumHexachloropalladate = new Material.Builder(GTExtendedChem.id("ammonium_hexapalladate"))
+            .dust().iconSet(METALLIC)
+            .color(0x9C9B90)
+            .buildAndRegister();
+
+    public static final Material TetraamminePalladiumChloride = new Material.Builder(GTExtendedChem.id("tetraammine_palladium_chloride"))
+            .dust().iconSet(METALLIC)
+            .color(0x9C9B90)
+            .buildAndRegister();
+
+    public static final Material InsoluablePLatinumGroupResidue = new Material.Builder(GTExtendedChem.id("insoluable_platinum_group_residue"))
+            .dust().iconSet(METALLIC)
+            .color(0xC4C094)
+            .buildAndRegister();
 }
+ */

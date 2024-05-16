@@ -23,8 +23,6 @@ public class GTExtendedChemGTAddon implements IGTAddon {
 
     @Override
     public void initializeAddon() {
-        GTBlocks.ALL_FILTERS.put(CleanroomFilterType.INSTANCE, GTECBlocks.ULTRA_STERILIZING_FILTER_CASING);
-
     }
 
     @Override

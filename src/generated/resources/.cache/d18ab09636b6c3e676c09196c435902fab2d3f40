@@ -1,0 +1,13 @@
+// 1.20.1	2024-04-29T20:27:46.203895	Registrate Provider for gtec [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+05fb13cbacd8e5694694ef7ed1bb429ed316de72 assets/gtec/lang/en_ud.json
+12c4ae3a90f73c7a205ccd68d2c276be67a0783f assets/gtec/lang/en_us.json
+ed94c70665f5510fcc5bd861c104544b996ea4e5 assets/gtec/models/item/echo_circuit_board.json
+39ac87ee688ecf9d949b72985a7766d2efe8588b assets/gtec/models/item/echo_printed_circuit_board.json
+62d99374cc8abb13fa3d1b72aa830b0f36147dfc assets/gtec/models/item/echo_processor.json
+51aad49c7523c5e877804c7117ee5978014a3079 assets/gtec/models/item/echo_processor_assembly.json
+d83eda6c0e5437e4e577a03b162f96d86ac60e3f assets/gtec/models/item/echo_processor_mainframe.json
+c16b753b38dccdce5591166c75e196a4174eae01 assets/gtec/models/item/echo_processor_supercomputer.json
+0ba0f43344f83b114156fb0ad71cebbc671545fc assets/gtec/models/item/petri_dish_with_sculk_culture.json
+be151b7a7d49e7061e5de08d5db35b3abed538f4 data/forge/tags/blocks/mineable/wrench.json
+5104d01ec26173b6574026ac0b52596650c4cfd5 data/gtec/loot_tables/blocks/ultra_sterilizing_filter_casing.json
+be151b7a7d49e7061e5de08d5db35b3abed538f4 data/minecraft/tags/blocks/needs_stone_tool.json

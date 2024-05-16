@@ -1,5 +1,6 @@
-package argent_matter.gtec.data.recipe;
+package argent_matter.gtec.data.recipe.disabled;
 
+/*
 import argent_matter.gtec.GTExtendedChem;
 import argent_matter.gtec.common.data.GTECMaterials;
 import com.sun.jna.platform.win32.WinCrypt;
@@ -150,6 +151,7 @@ public class MonaziteChainRecipes {
         BLAST_RECIPES.recipeBuilder("heterogenous_halogenic_rare_earth")
                 .inputItems(dust, GTECMaterials.MonaziteRarerEarthSediment,1)
                 .inputFluids(Chlorine.getFluid(1000))
+                .blastFurnaceTemp(1200)
                 .outputItems(dust, GTECMaterials.HeterogenousHalogenicMonaziteRareEarthMixture,1)
                 .duration(500).EUt(VA[HV]).save(provider);
 
@@ -365,3 +367,5 @@ public class MonaziteChainRecipes {
     }
 
 }
+
+ */
