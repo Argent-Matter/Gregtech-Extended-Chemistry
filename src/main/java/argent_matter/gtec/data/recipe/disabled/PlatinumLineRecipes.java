@@ -1,5 +1,5 @@
 package argent_matter.gtec.data.recipe.disabled;
-/*
+
 import argent_matter.gtec.GTExtendedChem;
 import argent_matter.gtec.common.data.GTECMaterials;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -558,6 +558,5 @@ public class PlatinumLineRecipes {
                 .duration(600).EUt(VA[LV]).save(provider);
     }
 }
-*/
 
 

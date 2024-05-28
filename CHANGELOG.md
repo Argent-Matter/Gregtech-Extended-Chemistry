@@ -1,3 +1,4 @@
-
-- added new bastnasite chain to have even more fun rare earth :)
-- added a new working tier of Cleanroom tho it does'nt have any recipes yet!
+- Mod Updated to Gregtech 1.2.3.
+- BEWARE! This is the last update on (Legacy or 0.1.0) version of the mod
+- completely new chains are coming are in the future which are not compatible...
+- ALWAYS BACKUP YOUR WORLDS BEFORE UPDATING

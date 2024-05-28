@@ -35,6 +35,7 @@ public class GTECMaterials {
 // Starting Over...
 
     // Nuclear Update
+    /*
     public static final Material URANIUM_CONCENTRATE = new Material.Builder(GTExtendedChem.id("uranium_concentrate"))
             .dust(1)
             .color(0x877924).iconSet(DULL)
@@ -59,61 +60,8 @@ public class GTECMaterials {
             .setFormula("Na2CO3", true);
 
 }
+     */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
     // PlatinumLine
     public static final Material PlatinumMetallicPowder = new Material.Builder(GTExtendedChem.id("platinum_metallic_powder"))
             .dust(1)
@@ -730,9 +678,11 @@ public class GTECMaterials {
             .buildAndRegister()
             .setFormula("Nd2O3", true);
 
+}
 
 // The New Platinum Line Stuff
 
+    /*
     public static final Material RoastedCooperite = new Material.Builder(GTExtendedChem.id("roasted_cooperite"))
             .dust().iconSet(ROUGH)
             .color(0x908129)
@@ -783,4 +733,4 @@ public class GTECMaterials {
             .color(0xC4C094)
             .buildAndRegister();
 }
- */
+     */

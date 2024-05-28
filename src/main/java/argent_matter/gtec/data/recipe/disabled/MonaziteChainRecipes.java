@@ -1,6 +1,6 @@
 package argent_matter.gtec.data.recipe.disabled;
 
-/*
+
 import argent_matter.gtec.GTExtendedChem;
 import argent_matter.gtec.common.data.GTECMaterials;
 import com.sun.jna.platform.win32.WinCrypt;
@@ -368,4 +368,3 @@ public class MonaziteChainRecipes {
 
 }
 
- */

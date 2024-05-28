@@ -1,6 +1,6 @@
 package argent_matter.gtec.data.recipe.disabled;
 
-/*
+
 import net.minecraft.data.recipes.FinishedRecipe;
 import argent_matter.gtec.GTExtendedChem;
 import argent_matter.gtec.common.data.GTECMaterials;
@@ -217,4 +217,3 @@ public class BastnasiteChainRecipes {
             .duration(32).EUt(VA[MV]).save(provider);
     }
 }
- */

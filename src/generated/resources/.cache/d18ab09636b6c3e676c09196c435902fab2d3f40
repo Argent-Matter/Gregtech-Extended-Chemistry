@@ -1,6 +1,6 @@
-// 1.20.1	2024-04-29T20:27:46.203895	Registrate Provider for gtec [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
-05fb13cbacd8e5694694ef7ed1bb429ed316de72 assets/gtec/lang/en_ud.json
-12c4ae3a90f73c7a205ccd68d2c276be67a0783f assets/gtec/lang/en_us.json
+// 1.20.1	2024-05-28T18:31:33.3667802	Registrate Provider for gtec [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+8ab17d2695f9f1d0e00f11204db8a3ba3592553b assets/gtec/lang/en_ud.json
+ba44fcc9ea378dc59ae93d862ecc37a7b427d9db assets/gtec/lang/en_us.json
 ed94c70665f5510fcc5bd861c104544b996ea4e5 assets/gtec/models/item/echo_circuit_board.json
 39ac87ee688ecf9d949b72985a7766d2efe8588b assets/gtec/models/item/echo_printed_circuit_board.json
 62d99374cc8abb13fa3d1b72aa830b0f36147dfc assets/gtec/models/item/echo_processor.json
