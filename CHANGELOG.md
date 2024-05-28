@@ -1,4 +1,4 @@
 - Mod Updated to Gregtech 1.2.3.
 - BEWARE! This is the last update on (Legacy or 0.1.0) version of the mod
 - completely new chains are coming are in the future which are not compatible...
-- ALWAYS BACKUP YOUR WORLDS BEFORE UPDATING
+- ALWAYS BACKUP YOUR WORLDS BEFORE UPDATING!
