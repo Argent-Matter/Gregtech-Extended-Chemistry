@@ -1,6 +1,5 @@
 package argent_matter.gtec;
 
-import argent_matter.gtec.block.GTECBlocks;
 import argent_matter.gtec.common.data.*;
 import argent_matter.gtec.registry.GTECCreativeModeTabs;
 import argent_matter.gtec.registry.GTECRegistries;
@@ -40,8 +39,6 @@ public class GTExtendedChem {
         GTECItems.init();
         GTECCreativeModeTabs.init();
         GTECMachines.init();
-        GTECBlocks.init();
-
         GTECDatagen.init();
         GTECRegistries.REGISTRATE.registerRegistrate();
     }

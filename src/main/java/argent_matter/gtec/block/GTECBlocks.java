@@ -1,6 +1,6 @@
 package argent_matter.gtec.block;
 
-
+/*
 import argent_matter.gtec.GTExtendedChem;
 import argent_matter.gtec.registry.GTECRegistries;
 import argent_matter.util.GTECUtil;
@@ -52,3 +52,6 @@ public class GTECBlocks {
     public static void init() {
     }
 }
+
+
+ */

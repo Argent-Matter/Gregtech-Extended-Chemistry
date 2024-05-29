@@ -1,7 +1,5 @@
 package argent_matter.gtec;
 
-import argent_matter.gtec.block.CleanroomFilterType;
-import argent_matter.gtec.block.GTECBlocks;
 import argent_matter.gtec.common.data.GTECRecipes;
 import argent_matter.gtec.registry.GTECRegistries;
 import com.gregtechceu.gtceu.api.addon.GTAddon;

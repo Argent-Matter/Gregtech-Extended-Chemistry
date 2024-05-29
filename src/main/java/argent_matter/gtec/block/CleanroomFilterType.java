@@ -1,6 +1,6 @@
 package argent_matter.gtec.block;
 
-
+/*
 import argent_matter.gtec.GTExtendedChem;
 import com.gregtechceu.gtceu.api.block.IFilterType;
 import com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType;
@@ -20,3 +20,5 @@ public class CleanroomFilterType implements IFilterType {
         return "ultra_sterilizing_filter_casing";
     }
 }
+
+ */
