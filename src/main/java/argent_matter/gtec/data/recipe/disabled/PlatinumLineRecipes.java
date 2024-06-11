@@ -156,6 +156,7 @@ public class PlatinumLineRecipes {
                 .circuitMeta(2)
                 .inputItems(dustSmall, GTECMaterials.PotassiumDisulfate, 2)
                 .outputFluids(RhodiumSulfate.getFluid(360))
+                .outputItems(dust, GTECMaterials.LeachResidue, 1)
                 .blastFurnaceTemp(775)
                 .duration(200).EUt(VA[MV]).save(provider);
 
