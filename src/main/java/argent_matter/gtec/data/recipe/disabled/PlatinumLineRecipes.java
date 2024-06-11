@@ -382,22 +382,22 @@ public class PlatinumLineRecipes {
         // Remaining Sifting Recipes
         SIFTER_RECIPES.recipeBuilder(GTExtendedChem.id("refined_platinum_salt"))
                         .inputItems(dust, GTECMaterials.PlatinumSalt,1)
-                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1000,0)
-                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1000,0)
-                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1000,0)
-                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1000,0)
-                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1000,0)
                 .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1500,0)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1500,0)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1500,0)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1500,0)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 1500,0)
+                .chancedOutput(dust, GTECMaterials.RefinedPlatlinumSalt, 2000,0)
                 .duration(600).EUt(VA[LV]).save(provider);
 
         SIFTER_RECIPES.recipeBuilder(GTExtendedChem.id("salt_to_metallic_powder_palladium"))
                 .inputItems(dust, GTECMaterials.PalladiumSalt,1)
-                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1000,0)
-                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1000,0)
-                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1000,0)
-                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1000,0)
-                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1000,0)
                 .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1500,0)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1500,0)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1500,0)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1500,0)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 1500,0)
+                .chancedOutput(dust, GTECMaterials.PalladiumMetallicPowder, 2000,0)
                 .duration(600).EUt(VA[LV]).save(provider);
 
 
