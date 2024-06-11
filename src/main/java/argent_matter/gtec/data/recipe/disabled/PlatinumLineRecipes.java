@@ -61,7 +61,7 @@ public class PlatinumLineRecipes {
 
         CHEMICAL_RECIPES.recipeBuilder(GTExtendedChem.id("dissolve_tetrahedrite_for_platline"))
                 .inputItems(crushedPurified, Tetrahedrite,9)
-                .inputItems(dust, GTECMaterials.PlatinumMetallicPowder)
+                .inputItems(dust, GTECMaterials.PlatinumMetallicPowder,9)
                 .inputFluids(AquaRegia.getFluid(10000))
                 .outputItems(dust, GTECMaterials.PlatinumResidue)
                 .outputFluids(GTECMaterials.PlatinumConcentrate.getFluid(10000))
@@ -558,5 +558,3 @@ public class PlatinumLineRecipes {
                 .duration(600).EUt(VA[LV]).save(provider);
     }
 }
-
-
